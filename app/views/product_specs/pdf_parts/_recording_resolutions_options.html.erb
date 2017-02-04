@@ -1,0 +1,24 @@
+<br>
+<table class="main smaller">
+  <tr class="first">
+    <th colspan="2" class="special_header <%= @product_spec.technology%>">Recording Resolution Options</th>
+  </tr>
+  <table class="nested">
+    <% @product_spec.resolution.each_with_index do |r,i|%>
+      <% if i <= 3 %>
+        <tr>
+          <th><%= "#{r} Resolution"%></th><td>4000 x 4000 pixels</td>
+        </tr>      
+      <% end %>
+    <% end %>
+  </tr>
+  <table class="nested">
+    <% @product_spec.resolution.each_with_index do |r,i|%>
+      <% if i > 3 %>
+        <tr>
+          <th><%= "#{r} Resolution"%></th><td>2000 x 2000 pixels</td>
+        </tr>      
+      <% end %>
+    <% end %>
+  </tr>
+</table>

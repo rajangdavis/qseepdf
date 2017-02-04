@@ -41,27 +41,32 @@ table.main{
 	width: 365px;
 }
 
-table.main th:not(.special_header),table.main td{
-	font-size:11px;
-	vertical-align: top;
-	line-height: 12px;
+table.nested{	
+	display: inline;
+	width: 50%;
 }
 
-table.main.smaller{
+table.main th:not(.special_header),table.main td,table.nested th:not(.special_header),table.nested td{
+	font-size:11px;
+	vertical-align: top;
+	line-height: 11px;
+}
+
+table.main.smaller,table.nested{
 	border-collapse: collapse;
 }
 
-table.main.smaller tr:not(.first){
+table.main.smaller tr:not(.first),table.nested tr:not(.first){
 	border-bottom: .5px solid lightgrey;
 	padding: 5px;
 }
 
-table.main.smaller td,table.main.smaller th{
+table.main.smaller td,table.main.smaller th,table.nested td,table.nested th{
 	font-size:10px;
 	font-weight: lighter;
 }
 
-table.main.smaller th{
+table.main.smaller th, table.nested th{
 	padding-left: 15px;
 }
 

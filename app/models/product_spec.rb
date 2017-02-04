@@ -92,13 +92,6 @@ class ProductSpec < ActiveRecord::Base
 		
 	end
 
-	def check_for_basic_info
-		if !self.technology.nil? && !self.sku.nil? && !self.channels.nil? && !self.recording_resolutions.nil? && !self.live_viewing_resolutions.nil? && !self.live_fps.nil? && !self.hard_drive_support.nil? && !self.remote_monitoring.nil? && !self.os_compatibility.nil? && !self.product_compatibility.nil? && !self.monitor_connections.nil?
-			true
-		else
-			false
-		end
-	end
 
 	def language_support
 		if !self.product_series.nil? && self.product_series =="QC Series"
@@ -106,6 +99,18 @@ class ProductSpec < ActiveRecord::Base
 		elsif !self.product_series.nil? && self.product_series =="QT Series"
 			"English, Chinese (Simplified & Traditional), Czech, French, Portuguese, Spanish, Turkish, Bulgarian, Greek, Italian, German, Russian, Polish, Japanese, Indonesian, Thai, Hungarian, Lithuanian, Vietnamese, Dutch, Swedish, Norwegian, Persian, Arabic, Romonian"
 		end
+	end
+
+	def check_for_basic_info
+		if !self.sku.nil? && !self.channels.nil? && !self.recording_resolutions.nil? && !self.live_viewing_resolutions.nil? && !self.live_fps.nil? && !self.hard_drive_support.nil? && !self.remote_monitoring.nil? && !self.os_compatibility.nil? && !self.product_compatibility.nil? && !self.monitor_connections.nil?
+			true
+		else
+			false
+		end
+	end
+
+	def check_for_basic_info
+
 	end
 
 end
