@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Qseepdf</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <% if action_name !='show'%>
+    <link href="//fonts.googleapis.com/css?family=Roboto:400,700,300,500|Roboto+Condensed:400,300,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="//qsee.custhelp.com/euf/assets/themes/qsee/qsee.min.css">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true%>
+  <% end %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body data-no-turbolink="true">
+  <% if action_name !='show'%>
+  	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <ul class="nav nav-pills container" role="tablist">
+        <li role="presentation pull-right">
+          <a href="/">
+            <img src='//i.imgur.com/2S6kiqI.png'>
+          </a>
+        </li>
+        <li class="presentation pull-right"><%#= link_to "Sign Out", logout_path(current_user), method: :delete %></li>
+        <li class="presentation pull-left"><%#= if current_user.role=='ADMIN' then link_to "Translations Portal", translate_index_path end%></li>
+      </ul>
+    </nav>
+  <% end %>
+	<div class="container main">
+		<%= yield %>
+	</div>
+
+</body>
+</html>

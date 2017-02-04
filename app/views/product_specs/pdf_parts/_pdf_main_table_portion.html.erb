@@ -1,0 +1,33 @@
+<h1 class="product-title <%= @product_spec.technology%>"><%= @product_spec.sku%></h1>
+<table class="main">
+    <tr>
+        <th>DVR Technology</th><td><%= @product_spec.technology%></td>
+    </tr>
+    <tr>
+        <th>Channels</th><td><%= @product_spec.channels%></td>  
+    </tr>
+    <tr>
+        <th>Recording Resolution</th><td><%= @product_spec.recording_resolutions%></td>
+    </tr>
+    <tr>
+        <th>Live Viewing Resolution</th><td><%= @product_spec.live_viewing_resolutions%></td>
+    </tr>
+    <tr>
+        <th>Live Display FPS</th><td><%= @product_spec.live_fps%></td>
+    </tr>
+    <tr>
+        <th>Hard Drive</th><td><%= @product_spec.hard_drive_support%></td>
+    </tr>
+    <tr>
+        <th>Remote Monitoring</th><td><%= @product_spec.remote_monitoring%></td>
+    </tr>
+    <tr>
+        <th>Compatibility</th><td><%= @product_spec.os_compatibility%></td>
+    </tr>
+    <tr>
+        <th>Connects With</th><td><%= @product_spec.product_compatibility%></td>
+    </tr>
+    <tr>
+        <th>Monitor Connections</th><td><%= @product_spec.monitor_connections%></td>
+    </tr>
+</table>

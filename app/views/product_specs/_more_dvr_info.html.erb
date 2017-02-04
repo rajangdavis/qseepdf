@@ -1,0 +1,14 @@
+<div class="col-lg-5">
+	<%= form_for @product_spec do |f| %>
+		<h2 class="">More <%=@product_spec.product_type%> Info</h2>
+		<div class="form-group">
+			<%= f.label "What Video Compression is supported by this product?" %>
+			<%= f.select(:video_compression, @video_compression,{},{ :multiple => true, :size => @video_compression.size,:class =>"form-control"}) %>
+		</div>
+		<div class="form-group">
+			<%= f.label "How many channels can be viewed in this product's display mode?" %>
+			<%= f.select(:display_modes, @channels,{},{ :multiple => true, :size => @channels.size,:class =>"form-control"}) %>
+		</div>
+		<%= f.submit "Update Spec Sheet", :class => "btn btn-default" %>
+	<% end %>
+</div>

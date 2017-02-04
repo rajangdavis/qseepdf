@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset='utf-8' />
+        <%= wicked_pdf_stylesheet_link_tag "pdf"%>
+        <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Roboto:400,700,300,500|Roboto+Condensed:400,300,700" %>
+    </head>
+    <body class="<%='pdf_view' unless @rendered_as == 'pdf'%>">
+        <div class="pdf-content">
+            <div class="product_spec_header">
+                <%= wicked_pdf_image_tag '/images/SpecSheetHeader_1200_Trimmed.png' unless @rendered_as=='html'%>
+                <%= image_tag 'SpecSheetHeader_1200_Trimmed.png' unless @rendered_as=='pdf'%>
+            </div>
+            <div id="content">
+                <%= render 'product_specs/pdf_parts/pdf_main_table_portion.html.erb'%>
+                <%= render 'product_specs/pdf_parts/dvr_info_table.html.erb'%>
+            </div>
+            <!-- <div class="product_spec_footer">
+              <a href="https://www.q-see.com">www.q-see.com</a>
+              <span>DIGITAL PERIPHERAL SOLUTIONS, INC.  |  8015 E. CRYSTAL DR., ANAHEIM, CA 92807 USA</span>
+            </div> -->
+        </div>
+    </body>
+</html>

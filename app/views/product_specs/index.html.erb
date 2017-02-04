@@ -1,0 +1,19 @@
+<div class="col-lg-4">
+	<%= form_for @product_spec do |f| %>
+		<h2 class="">Create a Product Spec</h2>
+		<div class="form-group">
+			<%= f.label "What type of device are you creating a spec sheet for?" %>
+		    <%= f.select :product_type, options_for_select(@rn_product_types) , :class => "form-control"%>
+	    </div>
+		<%= f.submit "Create Spec Sheet", :class => "btn btn-default" %>
+	<% end %>
+</div>
+
+<div class="col-lg-8">
+	<h2 class="">Product Specs</h2>
+	<% @product_specs.each do |product_spec|%>
+		<%=link_to "Edit #{product_spec.sku_or_nil} Specification", edit_product_spec_path(product_spec)%> | 
+		<%= link_to raw(pdf_icon), product_spec_path(product_spec, {format: :pdf})%>
+		<br>
+	<% end %>
+</div>

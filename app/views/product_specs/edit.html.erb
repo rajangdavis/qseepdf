@@ -1,0 +1,5 @@
+<h1><%= link_to(@product_spec.sku_or_nil, product_spec_path(format: :pdf)) %></h1>
+
+<%= if !@rn_product_series.nil? then render :partial => "product_specs/add_series_and_name" end %>
+<%= if @rn_product_series.nil? && @check_for_basic_info == false then render :partial => "product_specs/basic_dvr_info" end %>
+<%= if @check_for_basic_info then render :partial => "product_specs/more_dvr_info" end %>

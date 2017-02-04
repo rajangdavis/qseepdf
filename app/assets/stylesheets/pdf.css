@@ -1,0 +1,96 @@
+body{
+	font-family: "Roboto"
+}
+
+.product_spec_header img{
+	width: 70%;
+}
+
+.product_spec_footer{
+	position: absolute;
+	bottom: 0;
+}
+
+.product-title{
+	font-size: 50px;
+	font-weight: bolder;
+	margin:1% 0;
+}
+
+.SDI{
+	color: #f27037;
+}
+
+.IP{
+	color: #00A0DF;	
+}
+
+.BNC{
+	color: #00ad42;
+}
+
+.WI-FI{
+	color: #ffc826;
+}
+
+table{
+	color:#666666;
+}
+
+table.main{
+	width: 365px;
+}
+
+table.main th:not(.special_header),table.main td{
+	font-size:11px;
+	vertical-align: top;
+	line-height: 12px;
+}
+
+table.main.smaller{
+	border-collapse: collapse;
+}
+
+table.main.smaller tr:not(.first){
+	border-bottom: .5px solid lightgrey;
+	padding: 5px;
+}
+
+table.main.smaller td,table.main.smaller th{
+	font-size:10px;
+	font-weight: lighter;
+}
+
+table.main.smaller th{
+	padding-left: 15px;
+}
+
+table.main tr th.special_header{
+	color:white;
+	text-transform: uppercase;
+	font-size:14px;
+	font-weight: bolder;
+	padding: 5px;
+}
+
+th.special_header.SDI{
+	background-color: #f27037;
+}
+th.special_header.IP{
+	background-color: #00A0DF;	
+}
+th.special_header.BNC{
+	background-color: #00ad42;
+}
+th.special_header.WI-FI{
+	background-color: #ffc826;
+}
+.main tr th{
+	text-align: left;
+	white-space: nowrap;
+}
+table.main tr td{
+	display: block;
+    white-space: normal;
+    word-break: break-word;
+}
