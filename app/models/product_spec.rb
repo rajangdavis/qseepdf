@@ -1,11 +1,15 @@
 class ProductSpec < ActiveRecord::Base
 
-
 	before_validation do |model|
-	  model.resolution.reject!(&:blank?) if model.resolution
-	  model.display_resolution.reject!(&:blank?) if model.display_resolution
-	  model.video_compression.reject!(&:blank?) if model.video_compression
-	  model.display_modes.reject!(&:blank?) if model.display_modes
+
+		methods_to_validate.each do |mtv|
+			model.send(mtv).reject!(&:blank?) if model.send(mtv)
+		end
+		
+	end
+
+	def methods_to_validate
+		['resolution','display_resolution','video_compression','display_modes','recording_modes','backup_methods']
 	end
 
 	def recording_resolutions 
@@ -36,14 +40,12 @@ class ProductSpec < ActiveRecord::Base
 		self.display_modes.map {|dm| dm}.join("/")
 	end
 
-	def sku_or_nil
+	def recording_modes_list 
+		self.recording_modes.map {|rm| rm}.join(", ")
+	end
 
-		if !self.sku.nil? 
-			self.sku 
-		else 
-			'Unnamed Product' 
-		end
-
+	def backup_methods_list 
+		self.backup_methods.map {|bm| bm}.join(", ")
 	end
 
 	def technology
@@ -82,14 +84,22 @@ class ProductSpec < ActiveRecord::Base
 
 	end
 
-	def os_compat
 
-		if self.os_compatibility.nil?
-            return 'Mac and PC'
-        else
-            return self.os_compatibility
-        end
-		
+	def conditional(condition,if_result,else_result)
+		if condition
+			return if_result
+		else
+			return else_result
+		end
+	end
+
+	def sku_or_nil
+		conditional(!self.sku.nil?,self.sku,'Unnamed Product')
+	end
+
+
+	def os_compat
+		conditional(self.os_compatibility.nil?,'Mac and PC',self.os_compatibility)
 	end
 
 
@@ -102,15 +112,18 @@ class ProductSpec < ActiveRecord::Base
 	end
 
 	def check_for_basic_info
-		if !self.sku.nil? && !self.channels.nil? && !self.recording_resolutions.nil? && !self.live_viewing_resolutions.nil? && !self.live_fps.nil? && !self.hard_drive_support.nil? && !self.remote_monitoring.nil? && !self.os_compatibility.nil? && !self.product_compatibility.nil? && !self.monitor_connections.nil?
-			true
-		else
-			false
-		end
+		check = !self.sku.nil? && !self.channels.nil? && !self.recording_resolutions.nil? && !self.live_viewing_resolutions.nil? && !self.live_fps.nil? && !self.hard_drive_support.nil? && !self.remote_monitoring.nil? && !self.os_compatibility.nil? && !self.product_compatibility.nil? && !self.monitor_connections.nil?
+		conditional(check,true,false)
 	end
 
-	def check_for_basic_info
+	def check_for_recording_resolution
+		check = !self.video_compression.nil? && !self.display_modes.nil?
+		conditional(check,true,false)
+	end
 
+	def check_for_recording_modes
+		check = !self.recording_modes.nil? && !self.backup_methods.nil?
+		conditional(check,true,false)
 	end
 
 end

@@ -1,5 +1,7 @@
 <h1><%= link_to(@product_spec.sku_or_nil, product_spec_path(format: :pdf)) %></h1>
 
-<%= if !@rn_product_series.nil? then render :partial => "product_specs/add_series_and_name" end %>
-<%= if @rn_product_series.nil? && @check_for_basic_info == false then render :partial => "product_specs/basic_dvr_info" end %>
-<%= if @check_for_basic_info then render :partial => "product_specs/more_dvr_info" end %>
+<%= if !@rn_product_series.nil? then render :partial => "product_specs/product_specs_form/add_series_and_name" end %>
+<%= if @rn_product_series.nil? && @check_for_basic_info == false then render :partial => "product_specs/product_specs_form/basic_dvr_info" end %>
+<%= if @check_for_basic_info && @check_for_recording_resolution == false then render :partial => "product_specs/product_specs_form/more_dvr_info" end %>
+<%= if @check_for_recording_resolution && @check_for_recording_modes == false then render :partial => "product_specs/product_specs_form/recording_modes" end %>
+<%= if @check_for_recording_modes then render :partial => "product_specs/product_specs_form/playback_on_dvr" end %>

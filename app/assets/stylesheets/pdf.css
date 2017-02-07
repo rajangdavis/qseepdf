@@ -6,11 +6,6 @@ body{
 	width: 70%;
 }
 
-.product_spec_footer{
-	position: absolute;
-	bottom: 0;
-}
-
 .product-title{
 	font-size: 50px;
 	font-weight: bolder;
@@ -38,12 +33,17 @@ table{
 }
 
 table.main{
-	width: 365px;
+	width: 400px;
 }
 
 table.nested{	
 	display: inline;
-	width: 50%;
+	/*width: 50%;*/
+}
+
+table.nested.second{	
+	float:right;
+	margin-top: -52px;
 }
 
 table.main th:not(.special_header),table.main td,table.nested th:not(.special_header),table.nested td{
@@ -98,4 +98,32 @@ table.main tr td{
 	display: block;
     white-space: normal;
     word-break: break-word;
+}
+div.pagebreak{
+	page-break-after: always;
+}
+
+
+/*  Footer CSS  */
+
+div.product_spec_footer{
+	-webkit-box-shadow: 0px 0px 13px 1px rgba(102,102,102,1);
+	-moz-box-shadow: 0px 0px 13px 1px rgba(102,102,102,1);
+	box-shadow: 0px 0px 13px 1px rgba(102,102,102,1);
+}
+
+div.product_spec_footer a.footer_link{
+	color:#ffc826;
+	text-decoration: none;
+	font-weight: bolder;
+	font-size: 14px;
+	float:left;
+	padding: 15px;
+}
+div.product_spec_footer span.footer_info{
+	color: #666666;
+	font-weight: lighter;
+	font-size: 10px;
+	float:right;
+	padding: 19px;
 }

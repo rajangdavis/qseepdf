@@ -9,6 +9,8 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> 
     <link rel="stylesheet" type="text/css" href="//qsee.custhelp.com/euf/assets/themes/qsee/qsee.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true%>
+  <%else%>
+    <%= wicked_pdf_stylesheet_link_tag "pdf"%>
   <% end %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>

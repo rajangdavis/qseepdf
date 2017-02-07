@@ -1,0 +1,14 @@
+<div class="col-lg-5">
+	<%= form_for @product_spec do |f| %>
+		<h2 class="">Recording Modes</h2>
+		<div class="form-group">
+			<%= f.label "Which of the following recording modes are supported by this product?" %>
+			<%= f.select(:recording_modes, @recording_modes,{},{ :multiple => true, :size => @recording_modes.size,:class =>"form-control"}) %>
+		</div>
+		<div class="form-group">
+			<%= f.label "Which of the following backup methods are supported by this product?" %>
+			<%= f.select(:backup_methods, @backup_methods,{},{ :multiple => true, :size => @backup_methods.size,:class =>"form-control"}) %>
+		</div>
+		<%= f.submit "Update Spec Sheet", :class => "btn btn-default" %>
+	<% end %>
+</div>

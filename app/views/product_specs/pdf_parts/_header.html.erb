@@ -1,1 +1,4 @@
-_header.html.erb
+<div class="product_spec_header">
+    <%= wicked_pdf_image_tag '/images/SpecSheetHeader_1200_Trimmed.png' unless @rendered_as=='html'%>
+    <%= image_tag 'SpecSheetHeader_1200_Trimmed.png' unless @rendered_as=='pdf'%>
+</div>
