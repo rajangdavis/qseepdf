@@ -43,11 +43,13 @@ table.nested{
 
 table.nested.second{	
 	float:right;
-	margin-top: -52px;
+	margin-top: -68px;
+	/*margin-left: -20px;*/
 }
 
 table.main th:not(.special_header),table.main td,table.nested th:not(.special_header),table.nested td{
 	font-size:11px;
+	padding-top: 2px;
 	vertical-align: top;
 	line-height: 11px;
 }
@@ -74,8 +76,14 @@ table.main tr th.special_header{
 	color:white;
 	text-transform: uppercase;
 	font-size:14px;
-	font-weight: bolder;
+	font-family: 'Roboto';
+	font-weight: 900;
 	padding: 5px;
+}
+
+table:not(.main-table) tr th,table:not(.main-table) tr td{
+	height:15px;
+	/*padding:10px;*/
 }
 
 th.special_header.SDI{

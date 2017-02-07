@@ -2,25 +2,24 @@
 <table class="main smaller">
   <tbody>
     <tr class="first">
-      <th colspan="3" class="special_header <%= @product_spec.technology%>">Playback on DVR</th>
+      <strong><th colspan="3" class="special_header <%= @product_spec.technology%>">Playback on DVR</th></strong>
     </tr>
-    <!-- <td> -->
-      <!-- <table class="nested"> -->
-        <% @product_spec.display_resolution.each_with_index do |r,i|%>
-          <% if i == 0 %>
-            <tr>
-              <th>Playback Speed</th><td><%=r%> at 30 FPS per Channel</td><th>240 FPS Total</th>
-            </tr>      
-          <% end %>
-        <% end %>
-        <% @product_spec.display_resolution.each_with_index do |r,i|%>
-          <% if i > 0 %>
-            <tr>
-              <th></th><td><%=r%> at 30 FPS per Channel</td><th>240 FPS Total</th>
-            </tr>      
-          <% end %>
-        <% end %>
-      <!-- </table> -->
-    <!-- </td> -->
+    <% @product_spec.display_resolution.each_with_index do |r,i|%>
+      <% if i == 0 %>
+        <tr>
+          <th>Playback Speed</th><td><%=r%> at 30 FPS per Channel</td><th>240 FPS Total</th>
+        </tr>      
+      <% end %>
+    <% end %>
+    <% @product_spec.display_resolution.each_with_index do |r,i|%>
+      <% if i > 0 %>
+        <tr>
+          <th></th><td><%=r%> at 30 FPS per Channel</td><th>240 FPS Total</th>
+        </tr>      
+      <% end %>
+    <% end %>
+    <tr>
+      <th>Number of Channels</th><td><%= @product_spec.channels.to_s+" Simultaneous Local Playback"%></td><th></th>
+    </tr>
   </tbody>
 </table>

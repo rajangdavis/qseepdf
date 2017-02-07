@@ -3,17 +3,18 @@
     <head>
         <meta charset='utf-8' />
         <%= wicked_pdf_stylesheet_link_tag "pdf"%>
-        <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Roboto:400,700,300,500|Roboto+Condensed:400,300,700" %>
+        <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Roboto:900,400,700,300,500|Roboto+Condensed:400,300,700" %>
     </head>
     <body class="<%='pdf_view' unless @rendered_as == 'pdf'%>">
         <div class="pdf-content">
             <div id="content">
+                <br>
                 <%= render "product_specs/pdf_parts/pdf_main_table_portion.html.erb"%>
                 <%= render "product_specs/pdf_parts/dvr_info_table.html.erb"%>
                 <%= render "product_specs/pdf_parts/recording_resolutions_options.html.erb"%>
                 <%= render "product_specs/pdf_parts/recording_modes.html.erb"%>
                 <%= render "product_specs/pdf_parts/playback_on_dvr.html.erb"%>
-                <div class="pagebreak"></div>
+                <!-- <div class="pagebreak"></div> -->
             </div>
         </div>
     </body>

@@ -20,7 +20,7 @@ class ProductSpecsController < ApplicationController
                 render pdf: "show",
                        title: "#{@product_spec.sku_or_nil} Product Specifications",
                        margin:{
-                           top: 20,bottom:20
+                           top: 20,bottom:15
                        },
                        footer:{
                            html: {            
