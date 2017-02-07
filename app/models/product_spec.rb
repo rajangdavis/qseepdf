@@ -9,7 +9,7 @@ class ProductSpec < ActiveRecord::Base
 	end
 
 	def methods_to_validate
-		['resolution','display_resolution','video_compression','display_modes','recording_modes','backup_methods']
+		['resolution','display_resolution','video_compression','display_modes','recording_modes','backup_methods','dual_stream']
 	end
 
 	def recording_resolutions 
@@ -111,6 +111,10 @@ class ProductSpec < ActiveRecord::Base
 		end
 	end
 
+	def dual_stream_options_list
+		conditional(!self.dual_stream.nil?,self.dual_stream.map{|ds| ds}.join(', '),'Dual Stream not supported')
+	end
+
 	def check_for_basic_info
 		check = !self.sku.nil? && !self.channels.nil? && !self.recording_resolutions.nil? && !self.live_viewing_resolutions.nil? && !self.live_fps.nil? && !self.hard_drive_support.nil? && !self.remote_monitoring.nil? && !self.os_compatibility.nil? && !self.product_compatibility.nil? && !self.monitor_connections.nil?
 		conditional(check,true,false)
@@ -123,6 +127,11 @@ class ProductSpec < ActiveRecord::Base
 
 	def check_for_recording_modes
 		check = !self.recording_modes.nil? && !self.backup_methods.nil?
+		conditional(check,true,false)
+	end
+
+	def check_for_remote_monitoring
+		check = !self.scan_n_view.nil? && !self.dual_stream.nil?
 		conditional(check,true,false)
 	end
 

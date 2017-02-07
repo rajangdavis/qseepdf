@@ -78,6 +78,7 @@ class ProductSpecsController < ApplicationController
         @check_for_basic_info = @product_spec.check_for_basic_info
         @check_for_recording_resolution = @product_spec.check_for_recording_resolution
         @check_for_recording_modes = @product_spec.check_for_recording_modes
+        @check_for_remote_monitoring = @product_spec.check_for_remote_monitoring
     end
 
     def generate_spec_form_attrs
@@ -87,9 +88,11 @@ class ProductSpecsController < ApplicationController
         @video_compression = ['H.265','H.264','MJPEG','MJEPG4'].map{|vc| [vc,vc]}
         @recording_modes =['Manual','Time Schedule','Motion Detection','Sensor'].map{|rm| [rm,rm]}
         @backup_methods = ['PC','USB Flash','Hard Drive'].map{|bm| [bm,bm]}
+        @dual_stream_options = ['D1 @ 15 FPS','CIF @ 30 FPS'].map{|bm| [bm,bm]}
+        @yes_or_no = ['Yes','No'].map{|yn| [yn,yn]}
     end
 
     def product_spec_params
-        params.require(:product_spec).permit(:product_type,:number_of_hd,:ptz_support,:sku,:channels,{:resolution => []},:frames_per_second,:hard_drive_size,:max_users,:connects_with,:os_compatibility,:monitor_connections,{:video_compression=>[]},{:display_modes=>[]},{:recording_modes=>[]},{:backup_methods=>[]},:playback_speed,:max_channel_playback,:scan_n_view,:dual_stream,:simultaneous_users,:application_support,:mobile_support,:computer_support,:video_in,:video_out,:alarm_in,:alarm_out,:audio_in,:audio_out,:network_ports,:usb_ports,:e_sata,:remote_control,:connectors_or_cables,:mounting_hardware,:other_accessorries,:maximum_hd_size,:ptz_protocols,:power_supply,:power_consumption,:weight,:dimensions,:operating_temperature,:created_at,:updated_at,:product_series,{:display_resolution=>[]},:number_of_harddrives)
+        params.require(:product_spec).permit(:product_type,:number_of_hd,:ptz_support,:sku,:channels,{:resolution => []},:frames_per_second,:hard_drive_size,:max_users,:connects_with,:os_compatibility,:monitor_connections,{:video_compression=>[]},{:display_modes=>[]},{:recording_modes=>[]},{:backup_methods=>[]},:playback_speed,:max_channel_playback,:scan_n_view,{:dual_stream=>[]},:simultaneous_users,:application_support,:mobile_support,:computer_support,:video_in,:video_out,:alarm_in,:alarm_out,:audio_in,:audio_out,:network_ports,:usb_ports,:e_sata,:remote_control,:connectors_or_cables,:mounting_hardware,:other_accessorries,:maximum_hd_size,:ptz_protocols,:power_supply,:power_consumption,:weight,:dimensions,:operating_temperature,:created_at,:updated_at,:product_series,{:display_resolution=>[]},:number_of_harddrives)
     end
 end

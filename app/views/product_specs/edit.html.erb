@@ -4,4 +4,5 @@
 <%= if @rn_product_series.nil? && @check_for_basic_info == false then render :partial => "product_specs/product_specs_form/basic_dvr_info" end %>
 <%= if @check_for_basic_info && @check_for_recording_resolution == false then render :partial => "product_specs/product_specs_form/more_dvr_info" end %>
 <%= if @check_for_recording_resolution && @check_for_recording_modes == false then render :partial => "product_specs/product_specs_form/recording_modes" end %>
-<%= if @check_for_recording_modes then render :partial => "product_specs/product_specs_form/playback_on_dvr" end %>
+<%= if @check_for_recording_modes && @check_for_remote_monitoring == false then render :partial => "product_specs/product_specs_form/remote_monitoring" end %>
+<%= if @check_for_remote_monitoring then render :partial => "product_specs/product_specs_form/remote_monitoring" end %>

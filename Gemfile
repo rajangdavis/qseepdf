@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'osc_ruby'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
-
+gem 'rails_12factor'
 gem 'pg'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
