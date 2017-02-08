@@ -9,7 +9,7 @@
 # https://github.com/mileszs/wicked_pdf/blob/master/README.md
 
 if Rails.env.production?
-  wkhtmltopdf_path = "#{Rails.root}/bin/wkhtmltopdf"
+  wkhtmltopdf_path = "#{Rails.root}/bin/wkhtmltopdf"  
 else
   wkhtmltopdf_path = ENV['QSEEPDF_DEV']
 end
