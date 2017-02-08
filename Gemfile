@@ -2,8 +2,9 @@ source 'https://rubygems.org'
 
 gem 'osc_ruby'
 gem 'wicked_pdf'
-gem 'wkhtmltopdf-binary'
-gem 'wkhtmltopdf-heroku'
+group :development do
+	gem 'wkhtmltopdf-binary'
+end
 gem 'rails_12factor'
 gem 'pg'
 
