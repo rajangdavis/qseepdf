@@ -73,7 +73,9 @@ class ProductSpec < ActiveRecord::Base
 	def product_compatibility
 
 		@stripped_tech = self.technology.gsub(/( HD|-FI)/,'')
-		@stripped_series = self.product_series.gsub(/( Series)/,'')
+		if !self.product_series.nil?
+			@stripped_series = self.product_series.gsub(/( Series)/,'')
+		end
 		if self.product_type.match(/(DVR\/NVR|Recorders)/)
 			@opposite_product = 'Cameras'
 		elsif self.product_type.match(/(Camer)/)
@@ -138,12 +140,12 @@ class ProductSpec < ActiveRecord::Base
 	end
 
 	def check_for_recording_resolution
-		check = !self.video_compression.nil? && !self.display_modes.nil?
+		check = !self.video_compression.empty? && !self.display_modes.empty?
 		conditional(check,true,false)
 	end
 
 	def check_for_recording_modes
-		check = !self.recording_modes.nil? && !self.backup_methods.nil?
+		check = !self.recording_modes.empty? && !self.backup_methods.empty?
 		conditional(check,true,false)
 	end
 

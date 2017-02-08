@@ -5,7 +5,7 @@
         <%= wicked_pdf_stylesheet_link_tag "pdf"%>
         <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Roboto:900,400,700,300,500|Roboto+Condensed:400,300,700" %>
     </head>
-    <body class="<%=pdf_view%>">
+    <body class="<%=pdf_view%>" data-no-turbolink="true">
         <div class="pdf-content">
             <div id="content">
                 <br>
