@@ -3,11 +3,11 @@
 		<h2 class="">Product Series and Name</h2>
 		<div class="form-group">
 			<%= f.label "Does this product support scan n' view?" %>
-		    <%= f.select :scan_n_view, options_for_select(@yes_or_no),:class =>"form-control"%>
+		    <%= f.select :scan_n_view, @yes_or_no,:class =>"form-control"%>
 		</div>
 		<div class="form-group">
 			<%= f.label "What are the dual stream options supported by this product?" %>
-		    <%= f.select :dual_stream,options_for_select(@dual_stream_options),{},{ :multiple => true, :size => @dual_stream_options.size,:class =>"form-control"}%>
+		    <%= f.select :dual_stream,@dual_stream_options,{},{ :multiple => true, :size => @dual_stream_options.size,:class =>"form-control"}%>
 		</div>
 		<%= f.submit "Update Spec Sheet", :class => "btn btn-default" %>
 	<% end %>

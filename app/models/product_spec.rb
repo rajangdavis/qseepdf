@@ -1,16 +1,16 @@
 class ProductSpec < ActiveRecord::Base
 
 	before_validation do |model|
-
 		methods_to_validate.each do |mtv|
 			model.send(mtv).reject!(&:blank?) if model.send(mtv)
 		end
-		
 	end
 
 	def methods_to_validate
-		['resolution','display_resolution','video_compression','display_modes','recording_modes','backup_methods','dual_stream']
+		['resolution','display_resolution','video_compression','display_modes','recording_modes','backup_methods','dual_stream','application_support','mobile_support','computer_support']
 	end
+
+	
 
 	def recording_resolutions 
 		self.resolution.map {|rr| rr}.join("/")
@@ -102,7 +102,6 @@ class ProductSpec < ActiveRecord::Base
 		conditional(self.os_compatibility.nil?,'Mac and PC',self.os_compatibility)
 	end
 
-
 	def language_support
 		if !self.product_series.nil? && self.product_series =="QC Series"
 			"English, French, Spanish"
@@ -114,6 +113,24 @@ class ProductSpec < ActiveRecord::Base
 	def dual_stream_options_list
 		conditional(!self.dual_stream.nil?,self.dual_stream.map{|ds| ds}.join(', '),'Dual Stream not supported')
 	end
+
+	def software_support_list
+		self.application_support.map{|as| as}.join(', ')
+	end
+
+	def mobile_support_list
+		self.mobile_support.map{|ms| ms}.join(', ')
+	end
+
+ 	def computer_support_list
+ 		self.computer_support.map{|cs| cs}.join(', ')
+ 	end
+
+
+
+
+
+	# Various checks when filling out the forms
 
 	def check_for_basic_info
 		check = !self.sku.nil? && !self.channels.nil? && !self.recording_resolutions.nil? && !self.live_viewing_resolutions.nil? && !self.live_fps.nil? && !self.hard_drive_support.nil? && !self.remote_monitoring.nil? && !self.os_compatibility.nil? && !self.product_compatibility.nil? && !self.monitor_connections.nil?
@@ -132,6 +149,11 @@ class ProductSpec < ActiveRecord::Base
 
 	def check_for_remote_monitoring
 		check = !self.scan_n_view.nil? && !self.dual_stream.nil?
+		conditional(check,true,false)
+	end
+
+	def check_for_compatibility
+		check = !self.application_support.empty? && !self.mobile_support.empty? && !self.computer_support.empty?
 		conditional(check,true,false)
 	end
 

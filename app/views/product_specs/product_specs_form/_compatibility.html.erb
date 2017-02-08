@@ -1,0 +1,18 @@
+<div class="col-lg-5">
+	<%= form_for @product_spec do |f| %>
+		<h2 class="">Compatibility</h2>
+		<div class="form-group">
+			<%= f.label "Which of the following remote monitoring softwares are supported by this product?" %>
+		    <%= f.select(:application_support, @supported_softwares,{},{ :multiple => true, :size => @supported_softwares.size,:class =>"form-control"}) %>
+		</div>
+		<div class="form-group">
+			<%= f.label "Which of the following mobile applications are supported by this product?" %>
+		    <%= f.select(:mobile_support, @supported_mobile_devices,{},{ :multiple => true, :size => @supported_mobile_devices.size,:class =>"form-control"}) %>
+		</div>
+		<div class="form-group">
+			<%= f.label "Which of the following remote monitoring softwares are supported by this product?" %>
+		    <%= f.select(:computer_support, @supported_operating_systems,{},{ :multiple => true, :size => @supported_operating_systems.size,:class =>"form-control"}) %>
+		</div>
+		<%= f.submit "Update Spec Sheet", :class => "btn btn-default" %>
+	<% end %>
+</div>

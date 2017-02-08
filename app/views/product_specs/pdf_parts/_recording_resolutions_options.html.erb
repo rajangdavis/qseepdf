@@ -14,7 +14,7 @@
           <% end %>
         <% end %>
       </table>
-      <table class="nested second">
+      <table class="nested second <%=pdf_view%>">
         <% @product_spec.resolution.each_with_index do |r,i|%>
           <% if i > 3 %>
             <tr>
