@@ -7,5 +7,3 @@
 <%= if @check_for_recording_modes && @check_for_remote_monitoring == false then render :partial => "product_specs/product_specs_form/remote_monitoring" end %>
 <%= if @check_for_remote_monitoring && @check_for_compatibility == false then render :partial => "product_specs/product_specs_form/compatibility" end %>
 <%= if @check_for_compatibility then render :partial => "product_specs/product_specs_form/video_audio_alarm_ports" end %>
-
-<%#= @product_spec.inspect %>

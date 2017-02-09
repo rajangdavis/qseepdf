@@ -1,0 +1,20 @@
+<table class="main smaller">
+  <tr class="first">
+    <th colspan="2" class="special_header <%= @product_spec.technology%>">DVR</th>
+  </tr>
+  <tr>
+    <th>Video Compression</th><td><%= @product_spec.video_compression_list%></td>
+  </tr>
+  <tr>
+    <th>Live Display Resolution</th><td><%= @product_spec.live_viewing_resolutions%></td>
+  </tr>
+  <tr>
+    <th>Live Display FPS</th><td><%= @product_spec.live_fps.split(/(?<=0)/).join(' ')%></td>
+  </tr>
+  <tr>
+    <th>Display Modes</th><td><%= @product_spec.display_modes_list%></td>
+  </tr>
+  <tr>
+    <th>Languages</th><td><%= @product_spec.language_support%></td>
+  </tr>
+</table>

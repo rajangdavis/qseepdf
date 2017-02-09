@@ -10,7 +10,7 @@ class ProductSpec < ActiveRecord::Base
 		['resolution','display_resolution','video_compression','display_modes','recording_modes','backup_methods','dual_stream','application_support','mobile_support','computer_support']
 	end
 
-	
+	# This makes working the layout easier and more modular (for now....)	
 
 	def recording_resolutions 
 		self.resolution.map {|rr| rr}.join("/")
@@ -24,8 +24,12 @@ class ProductSpec < ActiveRecord::Base
 		"#{self.frames_per_second}FPS"
 	end
 
+	def hdd_tb
+		"#{self.hard_drive_size}TB"
+	end
+
 	def hard_drive_support
-		"Supports #{self.number_of_harddrives} HDD up to #{self.hard_drive_size}TB"
+		"Supports #{self.number_of_harddrives} HDD up to #{self.hdd_tb}"
 	end
 
 	def remote_monitoring

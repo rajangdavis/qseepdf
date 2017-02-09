@@ -1,0 +1,12 @@
+<% if @rendered_as == 'pdf'%>
+	<br>
+	<%= render "product_specs/pdf_parts/page_2/page_2_header.html.erb"%>
+<% end %>
+<div class="left_side">
+    <%= render "product_specs/pdf_parts/page_2/hard_drives.html.erb"%>
+    <%= render "product_specs/pdf_parts/page_2/ptz.html.erb"%>
+</div>
+<div class="right_side">
+    <%= render "product_specs/pdf_parts/page_2/power.html.erb"%>
+    <%= render "product_specs/pdf_parts/page_2/physical.html.erb"%>
+</div>

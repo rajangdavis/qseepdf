@@ -6,23 +6,15 @@
         <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Roboto:900,400,700,300,500|Roboto+Condensed:400,300,700" %>
     </head>
     <body class="<%=pdf_view%>" data-no-turbolink="true">
-        <div class="pdf-content">
+        <div class="pdf_content">
+            <% if @rendered_as=="html" %>
+                <br><br>
+                <%= render "product_specs/pdf_parts/header.html.erb"%>
+            <% end %>
             <div id="content">
-                <br>
-                <%= render "product_specs/pdf_parts/pdf_main_table_portion.html.erb"%>
-                <br>
-                <div class="left_side">
-                    <%= render "product_specs/pdf_parts/dvr_info_table.html.erb"%>
-                    <%= render "product_specs/pdf_parts/recording_resolutions_options.html.erb"%>
-                    <%= render "product_specs/pdf_parts/recording_modes.html.erb"%>
-                    <%= render "product_specs/pdf_parts/playback_on_dvr.html.erb"%>
-                    <%= render "product_specs/pdf_parts/remote_monitoring.html.erb"%>
-                </div>
-                <div class="right_side">
-                    <%= render "product_specs/pdf_parts/compatibility.html.erb"%>
-                    <%= render "product_specs/pdf_parts/compatibility.html.erb"%>
-                </div>
+                <%= render "product_specs/pdf_parts/page_1.html.erb"%>
                 <div class="pagebreak"></div>
+                <%= render "product_specs/pdf_parts/page_2.html.erb"%>
             </div>
         </div>
     </body>

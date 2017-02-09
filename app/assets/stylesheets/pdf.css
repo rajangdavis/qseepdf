@@ -3,7 +3,11 @@ body{
 }
 
 body.pdf_view{
-	margin:0 220px;
+	margin:0 22%;
+}
+
+.pdf_content{
+	height:230vh;
 }
 
 .product_spec_header img{
@@ -14,6 +18,11 @@ body.pdf_view{
 	font-size: 50px;
 	font-weight: bolder;
 	margin:1% 0;
+	clear:both;
+}
+
+h2.product_title{
+	font-size: 35px;
 }
 
 .SDI{
@@ -36,8 +45,13 @@ table{
 	color:#666666;
 }
 
+
 table.main:not(.left_side){
 	width: 100%;
+}
+
+#main_table{
+	width:400px;
 }
 
 .container {
@@ -49,7 +63,7 @@ table.main:not(.left_side){
 .left_side{
 	/*display: inline-table;*/
 	float:left;
-	width:55%;
+	width:57%;
 }
 
 .right_side{
@@ -57,7 +71,7 @@ table.main:not(.left_side){
 	left:0;
 	float:right;
 	margin-left: 10px;
-	width: 40%;
+	width: 41%;
 	display: inline-table;
 }
 
@@ -78,7 +92,12 @@ table.main th:not(.special_header),table.main td,table.nested th:not(.special_he
 	font-size:11px;
 	padding-top: 2px;
 	vertical-align: top;
-	line-height: 11px;
+	/*line-height: 11px;*/
+}
+
+table:not(#main_table) tr th:not(.special_header),table:not(#main_table) tr td{
+	font-size:10px;
+	font-family: 'Roboto Condensed';
 }
 
 table.main.smaller,table.nested{
@@ -104,8 +123,12 @@ table.main tr th.special_header{
 	text-transform: uppercase;
 	font-size:14px;
 	font-family: 'Roboto';
-	font-weight: 900;
-	padding: 5px;
+	font-weight: bold;
+	padding: 7px;
+}
+
+table:not(.main-table) tr th.smaller{
+	width:40%;
 }
 
 table:not(.main-table) tr th,table:not(.main-table) tr td{
@@ -134,11 +157,13 @@ th.special_header.grey_scale{
 	text-align: left;
 	white-space: nowrap;
 }
-/*table.main.main table tr td{
+
+#main_table tr td{
 	display: block;
     white-space: normal;
     word-break: break-word;
-}*/
+}
+
 div.pagebreak{
 	page-break-after: always;
 }
