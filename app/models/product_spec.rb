@@ -7,7 +7,7 @@ class ProductSpec < ActiveRecord::Base
 	end
 
 	def methods_to_validate
-		['resolution','display_resolution','video_compression','display_modes','recording_modes','backup_methods','dual_stream','application_support','mobile_support','computer_support']
+		['resolution','display_resolution','video_compression','display_modes','recording_modes','backup_methods','dual_stream','application_support','mobile_support','computer_support','network_ports']
 	end
 
 	# This makes working the layout easier and more modular (for now....)	
@@ -61,15 +61,15 @@ class ProductSpec < ActiveRecord::Base
 		end
 
         if /QT7|QH7|QH8|QT6/.match(@sku)
-            return 'SDI HD';
+            return 'SDI HD'
         elsif /QT8|QC8|QCN|QTN|QCK/.match(@sku)
-            return 'IP HD';
+            return 'IP HD'
         elsif /QC90|QC91|QCA|QC92|QC93|QC94|QC95|QT9|QTH|QTA/.match(@sku)
-            return 'BNC HD';
+            return 'BNC HD'
         elsif /QCW/.match(@sku)
-            return 'WI-FI';
+            return 'WI-FI'
         else
-            return 'ANALOG';
+            return 'ANALOG'
 		end
 
 	end
@@ -132,7 +132,19 @@ class ProductSpec < ActiveRecord::Base
  		self.computer_support.map{|cs| cs}.join(', ')
  	end
 
+ 	def usb_support
+ 		check = self.usb_ports.nil?
+ 		if_true = '_ USB 2.0, _ USB 3.0'
+ 		if_false = self.usb_ports
+ 		conditional(check,if_true,if_false)
+ 	end
 
+ 	def e_sata_support
+ 		check = self.e_sata.nil?
+ 		if_true = 'None'
+ 		if_false = self.e_sata
+ 		conditional(check,if_true,if_false)
+ 	end
 
 
 
@@ -160,6 +172,16 @@ class ProductSpec < ActiveRecord::Base
 
 	def check_for_compatibility
 		check = !self.application_support.empty? && !self.mobile_support.empty? && !self.computer_support.empty?
+		conditional(check,true,false)
+	end
+
+	def check_for_av_ports
+		check = !self.video_in.nil? && !self.alarm_in.nil? && !self.alarm_out.nil? && !self.audio_in.nil? && !self.audio_out.nil?
+		conditional(check,true,false)
+	end
+
+	def check_for_communication_ports
+		check = !self.network_ports.empty? && !self.usb_ports.nil? && !self.e_sata.nil?
 		conditional(check,true,false)
 	end
 

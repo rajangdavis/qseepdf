@@ -68,20 +68,26 @@ class ProductSpecsController < ApplicationController
         @check_for_recording_modes = @product_spec.check_for_recording_modes
         @check_for_remote_monitoring = @product_spec.check_for_remote_monitoring
         @check_for_compatibility = @product_spec.check_for_compatibility
+        @check_for_av_ports = @product_spec.check_for_av_ports
     end
 
     def generate_spec_form_attrs
-        @channels = [1,2,4,8,9,10,12,16,32].map{|ch| [ch,ch]}
-        @recording_resolutions = ['12MP','8MP','6MP','5MP','4MP','3MP','1080p','720p','D1'].map{|rr| [rr,rr]}
-        @display_resolutions = ['4k','1080p','1280x1024','720p','1024x768'].map{|dr| [dr,dr]}
-        @video_compression = ['H.265','H.264','MJPEG','MJEPG4'].map{|vc| [vc,vc]}
-        @recording_modes =['Manual','Time Schedule','Motion Detection','Sensor'].map{|rm| [rm,rm]}
-        @backup_methods = ['PC','USB Flash','Hard Drive'].map{|bm| [bm,bm]}
-        @dual_stream_options = ['D1 @ 15 FPS','CIF @ 30 FPS'].map{|bm| [bm,bm]}
-        @yes_or_no = ['Yes','No'].map{|yn| [yn,yn]}
-        @supported_softwares = ['QC View','QT View'].map{|ss| [ss,ss]}
-        @supported_mobile_devices = ['Android','iPhone','iPad'].map{|smd| [smd,smd]}
-        @supported_operating_systems = ['Windows XP','Windows Vista','Windows 7,8,10','Mac OSX 10.7+'].map{|sos| [sos,sos]}
+        @channels = map_to_select([1,2,4,8,9,10,12,16,32])
+        @recording_resolutions = map_to_select(['12MP','8MP','6MP','5MP','4MP','3MP','1080p','720p','D1'])
+        @display_resolutions = map_to_select(['4k','1080p','1280x1024','720p','1024x768'])
+        @video_compression = map_to_select(['H.265','H.264','MJPEG','MJEPG4'])
+        @recording_modes = map_to_select(['Manual','Time Schedule','Motion Detection','Sensor'])
+        @backup_methods = map_to_select(['PC','USB Flash','Hard Drive'])
+        @dual_stream_options = map_to_select(['D1 @ 15 FPS','CIF @ 30 FPS'])
+        @yes_or_no = map_to_select(['Yes','No'])
+        @supported_softwares = map_to_select(['QC View','QT View'])
+        @supported_mobile_devices = map_to_select(['Android','iPhone','iPad'])
+        @supported_operating_systems = map_to_select(['Windows XP','Windows Vista','Windows 7,8,10','Mac OSX 10.7+'])
+        @network_ports = map_to_select(["10","100","1000"])
+    end
+
+    def map_to_select(arr)
+        arr.map{|arr_contents|[arr_contents,arr_contents]}
     end
 
     def product_spec_params
