@@ -6,7 +6,9 @@
     <%= render "product_specs/pdf_parts/page_2/hard_drives.html.erb"%>
     <%= render "product_specs/pdf_parts/page_2/ptz.html.erb"%>
 </div>
-<div class="right_side">
-    <%= render "product_specs/pdf_parts/page_2/power.html.erb"%>
-    <%= render "product_specs/pdf_parts/page_2/physical.html.erb"%>
-</div>
+<% if @rendered_as == 'pdf'%>
+	<div class="right_side">
+	    <%= render "product_specs/pdf_parts/page_2/power.html.erb"%>
+	    <%= render "product_specs/pdf_parts/page_2/physical.html.erb"%>
+	</div>
+<% end %>

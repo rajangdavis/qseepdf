@@ -13,4 +13,8 @@
     <%= render "product_specs/pdf_parts/page_1/video_audio_alarm_ports.html.erb"%>
     <%= render "product_specs/pdf_parts/page_1/communication_ports.html.erb"%>
     <%= render "product_specs/pdf_parts/page_1/accessories.html.erb"%>
+    <% if @rendered_as == 'html'%>
+	    <%= render "product_specs/pdf_parts/page_2/power.html.erb"%>
+	    <%= render "product_specs/pdf_parts/page_2/physical.html.erb"%>
+	<% end %>
 </div>
