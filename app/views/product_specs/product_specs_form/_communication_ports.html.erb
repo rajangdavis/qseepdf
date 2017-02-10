@@ -10,7 +10,7 @@
 		    <%= f.text_field(:usb_ports,:value =>@product_spec.usb_support) %>
 		</div>
 		<div class="form-group">
-			<%= f.label "What type of eSATA support is provided by this product?" %>
+			<%= f.label :e_sata, "What type of eSATA support is provided by this product?" %>
 		    <%= f.text_field(:e_sata,:value=>@product_spec.e_sata_support) %>
 		</div>
 		<%= f.submit "Update Spec Sheet", :class => "btn btn-default" %>

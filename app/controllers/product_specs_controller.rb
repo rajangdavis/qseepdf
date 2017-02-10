@@ -69,10 +69,13 @@ class ProductSpecsController < ApplicationController
         @check_for_remote_monitoring = @product_spec.check_for_remote_monitoring
         @check_for_compatibility = @product_spec.check_for_compatibility
         @check_for_av_ports = @product_spec.check_for_av_ports
+        @check_for_communication_ports = @product_spec.check_for_communication_ports
+        @check_for_accessories = @product_spec.check_for_accessories
     end
 
     def generate_spec_form_attrs
         @channels = map_to_select([1,2,4,8,9,10,12,16,32])
+        @channels = map_to_select([1,2,8,9,16,"Auto Sequence"])
         @recording_resolutions = map_to_select(['12MP','8MP','6MP','5MP','4MP','3MP','1080p','720p','D1'])
         @display_resolutions = map_to_select(['4k','1080p','1280x1024','720p','1024x768'])
         @video_compression = map_to_select(['H.265','H.264','MJPEG','MJEPG4'])
@@ -84,6 +87,11 @@ class ProductSpecsController < ApplicationController
         @supported_mobile_devices = map_to_select(['Android','iPhone','iPad'])
         @supported_operating_systems = map_to_select(['Windows XP','Windows Vista','Windows 7,8,10','Mac OSX 10.7+'])
         @network_ports = map_to_select(["10","100","1000"])
+        @remote_control = map_to_select(["USB Mouse","Remote Control"])
+        @connectors_or_cables = map_to_select(["HDMI Cable"])
+        @mounting_hardware = map_to_select(["Screws for Hard Drive"])
+        @other_accessorries = map_to_select(["Quick Start Guide"])
+        @ptz_protocols = map_to_select(["COC","Null","Pelco P","Pelco D","Lilin","Minking","Neon","Star","VIDO","DSCP","VISCA","Samsung","RM110","HY"])
     end
 
     def map_to_select(arr)
@@ -91,6 +99,6 @@ class ProductSpecsController < ApplicationController
     end
 
     def product_spec_params
-        params.require(:product_spec).permit(:product_type,:number_of_hd,:ptz_support,:sku,:channels,{:resolution => []},:frames_per_second,:hard_drive_size,:max_users,:connects_with,:os_compatibility,:monitor_connections,{:video_compression=>[]},{:display_modes=>[]},{:recording_modes=>[]},{:backup_methods=>[]},:playback_speed,:max_channel_playback,:scan_n_view,{:dual_stream=>[]},:simultaneous_users,{:application_support=>[]},{:mobile_support=>[]},{:computer_support=>[]},:video_in,:video_out,:alarm_in,:alarm_out,:audio_in,:audio_out,:network_ports,:usb_ports,:e_sata,:remote_control,:connectors_or_cables,:mounting_hardware,:other_accessorries,:maximum_hd_size,:ptz_protocols,:power_supply,:power_consumption,:weight,:dimensions,:operating_temperature,:created_at,:updated_at,:product_series,{:display_resolution=>[]},:number_of_harddrives)
+        params.require(:product_spec).permit(:product_type,:number_of_hd,:ptz_support,:sku,:channels,{:resolution => []},:frames_per_second,:hard_drive_size,:max_users,:connects_with,:os_compatibility,:monitor_connections,{:video_compression=>[]},{:display_modes=>[]},{:recording_modes=>[]},{:backup_methods=>[]},:playback_speed,:max_channel_playback,:scan_n_view,{:dual_stream=>[]},:simultaneous_users,{:application_support=>[]},{:mobile_support=>[]},{:computer_support=>[]},:video_in,:video_out,:alarm_in,:alarm_out,:audio_in,:audio_out,{:network_ports=>[]},:usb_ports,:e_sata,{:remote_control=>[]},{:connectors_or_cables=>[]},{:mounting_hardware=>[]},{:other_accessorries=>[]},:maximum_hd_size,:ptz_protocols,:power_supply,:power_consumption,:weight,:dimensions,:operating_temperature,:created_at,:updated_at,:product_series,{:display_resolution=>[]},:number_of_harddrives)
     end
 end

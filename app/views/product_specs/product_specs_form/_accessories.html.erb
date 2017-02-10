@@ -1,0 +1,22 @@
+<div class="col-lg-5">
+	<%= form_for @product_spec do |f| %>
+		<h2 class="">Accessories</h2>
+		<div class="form-group">
+			<%= f.label :remote_control, 'How can this product be controlled?' %>
+			<%= f.select(:remote_control, @remote_control,{},{ :multiple => true, :size => @remote_control.size,:class =>"form-control"}) %>
+		</div>
+		<div class="form-group">
+			<%= f.label :connectors_or_cables, 'What connectors or cables come with this product?' %>
+			<%= f.select(:connectors_or_cables, @connectors_or_cables,{},{ :multiple => true, :size => @connectors_or_cables.size,:class =>"form-control"}) %>
+		</div>
+		<div class="form-group">
+			<%= f.label :mounting_hardware, 'What mounting hardware is included with this product?' %>
+			<%= f.select(:mounting_hardware, @mounting_hardware,{},{ :multiple => true, :size => @mounting_hardware.size,:class =>"form-control"}) %>
+		</div>
+		<div class="form-group">
+			<%= f.label :other_accessorries, 'What other accessories are included with this product?' %>
+			<%= f.select(:other_accessorries, @other_accessorries,{},{ :multiple => true, :size => @other_accessorries.size,:class =>"form-control"}) %>
+		</div>
+		<%= f.submit "Update Spec Sheet", :class => "btn btn-default" %>
+	<% end %>
+</div>

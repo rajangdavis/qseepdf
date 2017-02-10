@@ -185,4 +185,9 @@ class ProductSpec < ActiveRecord::Base
 		conditional(check,true,false)
 	end
 
+	def check_for_accessories
+		check = !self.remote_control.empty? && !self.connectors_or_cables.empty? && !self.mounting_hardware.empty? && !self.other_accessorries.empty?	
+		conditional(check,true,false)
+	end
+
 end
