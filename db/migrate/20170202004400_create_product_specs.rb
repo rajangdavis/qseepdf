@@ -39,9 +39,7 @@ class CreateProductSpecs < ActiveRecord::Migration
       t.text :connectors_or_cables, default: [], array: true
       t.text :mounting_hardware, default: [], array: true
       t.text :other_accessorries, default: [], array: true
-      t.integer :maximum_hd_size
-      t.integer :number_of_hd
-      t.text :ptz_support, default: [], array: true
+      t.string :ptz_support
       t.text :ptz_protocols, default: [], array: true
       t.string :power_supply
       t.string :power_consumption

@@ -9,4 +9,6 @@
 <%= if @check_for_compatibility && @check_for_av_ports == false then render :partial => "product_specs/product_specs_form/video_audio_alarm_ports" end %>
 <%= if @check_for_av_ports && @check_for_communication_ports == false then render :partial => "product_specs/product_specs_form/communication_ports" end %>
 <%= if @check_for_communication_ports && @check_for_accessories == false then render :partial => "product_specs/product_specs_form/accessories" end %>
-<%= if @check_for_accessories then render :partial => "product_specs/product_specs_form/ptz" end %>
+<%= if @check_for_accessories && @check_for_ptz == false then render :partial => "product_specs/product_specs_form/ptz" end %>
+<%= if @check_for_ptz && @check_for_power == false then render :partial => "product_specs/product_specs_form/power" end %>
+<%= if @check_for_power && @check_for_physical == false then render :partial => "product_specs/product_specs_form/physical" end %>

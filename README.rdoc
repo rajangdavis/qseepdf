@@ -1,4 +1,0 @@
-TODO
-
--Remove maximum_hd_size and number_of_hd
--Modify ptz_support to be a string

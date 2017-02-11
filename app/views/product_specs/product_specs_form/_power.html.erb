@@ -1,0 +1,14 @@
+<div class="col-lg-5">
+	<%= form_for @product_spec do |f| %>
+		<h2 class="">Power Supply</h2>
+		<div class="form-group">
+			<%= f.label "What type of power supply is used by this product?" %>
+		    <%= f.text_field :power_supply,:class => "form-control"%>
+		</div>
+		<div class="form-group">
+			<%= f.label "What is the power consumption used by this product?" %>
+		    <%= f.text_field :power_consumption,:class => "form-control"%>
+		</div>
+		<%= f.submit "Update Spec Sheet", :class => "btn btn-default" %>
+	<% end %>
+</div>

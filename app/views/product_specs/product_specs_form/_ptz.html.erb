@@ -6,7 +6,7 @@
 		    <%= f.text_field :ptz_support,:class => "form-control"%>
 		</div>
 		<div class="form-group">
-			<%= f.label :ptz_protocols, 'How can this product be controlled?' %>
+			<%= f.label :ptz_protocols, 'Which of the following PTZ Protocols are supported?' %>
 			<%= f.select(:ptz_protocols, @ptz_protocols,{},{ :multiple => true, :size => @ptz_protocols.size,:class =>"form-control"}) %>
 		</div>
 		<%= f.submit "Update Spec Sheet", :class => "btn btn-default" %>

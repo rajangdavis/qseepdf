@@ -2,12 +2,14 @@ class ProductSpec < ActiveRecord::Base
 
 	before_validation do |model|
 		methods_to_validate.each do |mtv|
+			
+
 			model.send(mtv).reject!(&:blank?) if model.send(mtv)
 		end
 	end
 
 	def methods_to_validate
-		['resolution','display_resolution','video_compression','display_modes','recording_modes','backup_methods','dual_stream','application_support','mobile_support','computer_support','network_ports']
+		['resolution','display_resolution','video_compression','display_modes','recording_modes','backup_methods','dual_stream','application_support','mobile_support','computer_support','network_ports','remote_control','connectors_or_cables','mounting_hardware','other_accessorries','ptz_protocols']
 	end
 
 	# This makes working the layout easier and more modular (for now....)	
@@ -146,7 +148,43 @@ class ProductSpec < ActiveRecord::Base
  		conditional(check,if_true,if_false)
  	end
 
+ 	def video_in_tech
+ 		if self.technology == "BNC HD"
+ 			"#{self.video_in.to_s} BNC"
+ 		elsif self.technology == "IP HD"
+ 			"#{self.video_in.to_s} POE"
+ 		end
+ 	end
 
+ 	def audio(attr)
+ 		count = self.send(attr)
+ 		"#{count} RCA"
+ 	end
+
+ 	def network_cap
+ 		speed = self.network_ports.map {|n| n}.join('/')
+ 		"RJ45 #{speed} Mbps"
+ 	end
+
+ 	def remote_control_options
+ 		self.remote_control.map { |rc| rc }.join(',')
+ 	end
+
+ 	def connectors_or_cables_options
+ 		self.connectors_or_cables.map { |coc| coc }.join(', ')
+ 	end
+
+ 	def mounting_hardware_options
+ 		self.mounting_hardware.map { |mh| mh }.join(', ')
+ 	end
+
+ 	def other_accessories_options
+ 		self.other_accessorries.map { |oa| oa }.join(', ')
+ 	end
+
+ 	def ptz_protocol_options
+ 		self.ptz_protocols.map { |pp| pp.gsub(/\s+/, "")  }.join(', ')
+ 	end
 
 	# Various checks when filling out the forms
 
@@ -187,6 +225,21 @@ class ProductSpec < ActiveRecord::Base
 
 	def check_for_accessories
 		check = !self.remote_control.empty? && !self.connectors_or_cables.empty? && !self.mounting_hardware.empty? && !self.other_accessorries.empty?	
+		conditional(check,true,false)
+	end
+
+	def check_for_ptz
+		check = !self.ptz_support.nil? && !self.ptz_protocols.empty?
+		conditional(check,true,false)
+	end
+
+	def check_for_power
+		check = !self.power_supply.nil? && !self.power_consumption.nil?
+		conditional(check,true,false)
+	end
+
+	def check_for_physical
+		check = !self.weight.nil? && !self.dimensions.nil? && !self.operating_temperature.nil?		
 		conditional(check,true,false)
 	end
 

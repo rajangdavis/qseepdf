@@ -4,21 +4,21 @@
     <th colspan="2" class="special_header grey_scale">Video, Audio & Alarm Ports</th>
   </tr>
   <tr>
-    <th>Video In</th><td><%= @product_spec.software_support_list%></td>
+    <th class="smaller">Video In</th><td><%= @product_spec.video_in_tech%></td>
   </tr>
   <tr>
-    <th>Video Out</th><td><%= @product_spec.mobile_support_list%></td>
+    <th class="smaller">Video Out</th><td><%= @product_spec.monitor_connections%></td>
   </tr>
   <tr>
-    <th>Alarm In</th><td><%= @product_spec.computer_support_list%></td>
+    <th class="smaller">Alarm In</th><td><%= @product_spec.alarm_in%></td>
   </tr>
   <tr>
-    <th>Alarm Out</th><td><%= @product_spec.software_support_list%></td>
+    <th class="smaller">Alarm Out</th><td><%= @product_spec.alarm_out%></td>
   </tr>
   <tr>
-    <th>Audio In</th><td><%= @product_spec.mobile_support_list%></td>
+    <th class="smaller">Audio In</th><td><%= @product_spec.audio('audio_in')%></td>
   </tr>
   <tr>
-    <th>Audio Out</th><td><%= @product_spec.computer_support_list%></td>
+    <th class="smaller">Audio Out</th><td><%= @product_spec.audio('audio_out')%></td>
   </tr>
 </table>

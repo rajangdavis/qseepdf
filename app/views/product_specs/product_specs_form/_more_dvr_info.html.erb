@@ -7,7 +7,7 @@
 		</div>
 		<div class="form-group">
 			<%= f.label "How many channels can be viewed in this product's display mode?" %>
-			<%= f.select(:display_modes, @channels,{},{ :multiple => true, :size => @channels.size,:class =>"form-control"}) %>
+			<%= f.select(:display_modes, @display_channels,{},{ :multiple => true, :size => @display_channels.size,:class =>"form-control"}) %>
 		</div>
 		<%= f.submit "Update Spec Sheet", :class => "btn btn-default" %>
 	<% end %>

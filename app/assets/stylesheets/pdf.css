@@ -148,6 +148,9 @@ th.special_header.BNC{
 th.special_header.WI-FI{
 	background-color: #ffc826;
 }
+th.special_header.ANALOG{
+	background-color: black;
+}
 th.special_header.grey_scale{
 	background-color: rgb(188, 189, 192);	
 	color:#666666 !important;
