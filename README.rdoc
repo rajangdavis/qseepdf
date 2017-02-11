@@ -1,0 +1,8 @@
+	TODO
+	[] Set up database for Paper Clip
+	[] Add AWS
+	[] Maybe add ImageMagick for resizing?
+	[] Set up front panel and back panel downloads
+	[] Create a way to edit product specs
+	[] Start working on Camera Specs
+	[] Make code better in terms of abstraction and encapsulation
