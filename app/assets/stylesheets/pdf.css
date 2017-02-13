@@ -25,6 +25,15 @@ h2.product_title{
 	font-size: 35px;
 }
 
+.dvr_info table{
+	display: inline;
+}
+.dvr_info img{
+	display: inline;
+	float: right;
+	/*max-width:100%;*/
+}
+
 .SDI{
 	color: #f27037;
 }
@@ -194,4 +203,9 @@ div.product_spec_footer span.footer_info{
 	font-size: 10px;
 	float:right;
 	padding: 19px;
+}
+
+img.back_panel{
+	display: inline-block;
+	width: 100%;
 }
