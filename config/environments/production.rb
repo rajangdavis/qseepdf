@@ -76,4 +76,12 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => ENV['QSee_Bucket'],
+      :access_key_id => ENV['QSee_Key'],
+      :secret_access_key => ENV['QSee_Secret']
+    }
+  }
 end

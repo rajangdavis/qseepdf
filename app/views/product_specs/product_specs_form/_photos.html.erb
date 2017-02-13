@@ -1,0 +1,16 @@
+<div class="col-lg-5">
+	<%= form_for(@product_spec, multipart: true) do |f| %>
+		<h2 class="">Product Spec Photos</h2>
+		<div class="form-group">
+			<%= f.label :front_panel %>
+			<%= f.file_field :front_panel %>
+		</div>
+		<div class="form-group">
+			<%= f.label :back_panel %>
+			<%= f.file_field :back_panel %>
+		</div>
+		<div class="form-group">
+			<%= f.submit 'Add Pictures' %>
+		</div>
+	<% end %>
+</div>

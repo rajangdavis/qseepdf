@@ -14,8 +14,8 @@
 			<%= f.select(:mounting_hardware, @mounting_hardware,{},{ :multiple => true, :size => @mounting_hardware.size,:class =>"form-control"}) %>
 		</div>
 		<div class="form-group">
-			<%= f.label :other_accessorries, 'What other accessories are included with this product?' %>
-			<%= f.select(:other_accessorries, @other_accessorries,{},{ :multiple => true, :size => @other_accessorries.size,:class =>"form-control"}) %>
+			<%= f.label :other_accessories, 'What other accessories are included with this product?' %>
+			<%= f.select(:other_accessories, @other_accessories,{},{ :multiple => true, :size => @other_accessories.size,:class =>"form-control"}) %>
 		</div>
 		<%= f.submit "Update Spec Sheet", :class => "btn btn-default" %>
 	<% end %>

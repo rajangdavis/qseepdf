@@ -1,4 +1,11 @@
 class ProductSpec < ActiveRecord::Base
+	has_attached_file :front_panel, styles: {
+	    square: '200x200>',
+	}
+	has_attached_file :back_panel
+	validates_attachment_content_type :front_panel, :content_type => /\Aimage\/.*\Z/
+	validates_attachment_content_type :back_panel, :content_type => /\Aimage\/.*\Z/
+
 
 	before_validation do |model|
 		methods_to_validate.each do |mtv|
@@ -9,7 +16,7 @@ class ProductSpec < ActiveRecord::Base
 	end
 
 	def methods_to_validate
-		['resolution','display_resolution','video_compression','display_modes','recording_modes','backup_methods','dual_stream','application_support','mobile_support','computer_support','network_ports','remote_control','connectors_or_cables','mounting_hardware','other_accessorries','ptz_protocols']
+		['resolution','display_resolution','video_compression','display_modes','recording_modes','backup_methods','dual_stream','application_support','mobile_support','computer_support','network_ports','remote_control','connectors_or_cables','mounting_hardware','other_accessories','ptz_protocols']
 	end
 
 	# This makes working the layout easier and more modular (for now....)	
@@ -179,7 +186,7 @@ class ProductSpec < ActiveRecord::Base
  	end
 
  	def other_accessories_options
- 		self.other_accessorries.map { |oa| oa }.join(', ')
+ 		self.other_accessories.map { |oa| oa }.join(', ')
  	end
 
  	def ptz_protocol_options
@@ -224,7 +231,7 @@ class ProductSpec < ActiveRecord::Base
 	end
 
 	def check_for_accessories
-		check = !self.remote_control.empty? && !self.connectors_or_cables.empty? && !self.mounting_hardware.empty? && !self.other_accessorries.empty?	
+		check = !self.remote_control.empty? && !self.connectors_or_cables.empty? && !self.mounting_hardware.empty? && !self.other_accessories.empty?	
 		conditional(check,true,false)
 	end
 

@@ -4,9 +4,12 @@ gem 'osc_ruby'
 gem 'wicked_pdf'
 group :development do
 	gem 'wkhtmltopdf-binary'
+	gem "better_errors"
 end
 gem 'rails_12factor'
 gem 'pg'
+gem 'paperclip'
+gem 'aws-sdk', '< 2.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'

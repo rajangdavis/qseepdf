@@ -38,4 +38,12 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+    config.paperclip_defaults = {
+      :storage => :s3,
+      :s3_credentials => {
+        :bucket => ENV['QSee_Bucket'],
+        :access_key_id => ENV['QSee_Key'],
+        :secret_access_key => ENV['QSee_Secret']
+      }
+    }
 end

@@ -38,7 +38,7 @@ class CreateProductSpecs < ActiveRecord::Migration
       t.text :remote_control, default: [], array: true
       t.text :connectors_or_cables, default: [], array: true
       t.text :mounting_hardware, default: [], array: true
-      t.text :other_accessorries, default: [], array: true
+      t.text :other_accessories, default: [], array: true
       t.string :ptz_support
       t.text :ptz_protocols, default: [], array: true
       t.string :power_supply
