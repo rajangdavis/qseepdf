@@ -9,8 +9,6 @@ class ProductSpec < ActiveRecord::Base
 
 	before_validation do |model|
 		methods_to_validate.each do |mtv|
-			
-
 			model.send(mtv).reject!(&:blank?) if model.send(mtv)
 		end
 	end
