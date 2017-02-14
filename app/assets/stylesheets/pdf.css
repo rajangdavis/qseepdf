@@ -24,14 +24,22 @@ body.pdf_view{
 h2.product_title{
 	font-size: 35px;
 }
-
-.dvr_info table{
-	display: inline;
+.main_table_div{
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+.main_table_div:first-of-type{
+	width:40%;
+}
+.main_table_div:last-of-type{
+	width:58%;
 }
 .dvr_info img{
-	display: inline;
-	float: right;
-	/*max-width:100%;*/
+	display: block;
+	margin: 0 auto;
+	max-width:100%;
+	vertical-align: middle;
 }
 
 .SDI{
