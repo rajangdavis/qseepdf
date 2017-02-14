@@ -26,3 +26,8 @@ body{
 .pdf_icon{
 	width: 2%
 }
+.login-btn{
+	border: none;
+	margin: 0;
+	background: #eee;
+}

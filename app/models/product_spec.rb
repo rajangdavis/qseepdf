@@ -189,6 +189,10 @@ class ProductSpec < ActiveRecord::Base
  		self.ptz_protocols.map { |pp| pp.gsub(/\s+/, "")  }.join(', ')
  	end
 
+ 	def weight_in_lbs
+ 		"#{self.weight.to_s} lbs"
+ 	end
+
 	# Various checks when filling out the forms
 
 	def check_for_basic_info

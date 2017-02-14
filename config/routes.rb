@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   
-  root 'product_specs#index'
+  root 'sessions#new'
 
-  resources :product_specs
+  resources :sessions
+  delete '/logout' => 'sessions#destroy', as: :logout
+
+  resources :product_specs, except: :destroy
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

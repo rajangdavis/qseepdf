@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
 	# Prevent CSRF attacks by raising an exception.
 	# For APIs, you may want to use :null_session instead.
 	protect_from_forgery with: :exception
-	helper_method :pdf_icon
+	helper_method :pdf_icon, :current_user
 	require 'osc_ruby'
 
 	def rn_test_client
@@ -21,6 +21,10 @@ class ApplicationController < ActionController::Base
 
 	def pdf_icon
 		"<span><img class='pdf_icon' src='#{pdf_icon_source}'>Spec Sheet PDF</span>"
+	end
+
+	def current_user
+  		@current_user ||= User.where(id: session[:user_id]).first
 	end
 
 end

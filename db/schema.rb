@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170213214156) do
+ActiveRecord::Schema.define(version: 20170214024254) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,13 +72,26 @@ ActiveRecord::Schema.define(version: 20170213214156) do
     t.string   "back_panel_content_type"
     t.integer  "back_panel_file_size"
     t.datetime "back_panel_updated_at"
+    t.integer  "user_id"
+    t.integer  "rightnow_answer_id"
+    t.string   "answer_status"
   end
+
+  add_index "product_specs", ["user_id"], name: "index_user_id", using: :btree
 
   create_table "recording_resolutions", force: :cascade do |t|
     t.string   "name"
     t.string   "pixels"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "username"
+    t.string   "password_digest"
+    t.string   "role"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

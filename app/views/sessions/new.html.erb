@@ -1,0 +1,27 @@
+<%= form_for(@user,{url:sessions_path}) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <br><br><br><br><br><br>
+  <div class="row signin">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 form-group divform">
+      <%= f.text_field :username, :class => "form-control", :placeholder =>  "Username" %><br>
+      <div class="input-group"> 
+        <%= f.password_field :password, :id => "password", :class => "form-control", :placeholder => "Password"%>
+        <span class="input-group-addon"><%= f.submit "Log in", :class => "login-btn"%></span>
+        <% if flash[:notice] %><br><br>
+          <div class="text-center bg-danger"><%= flash[:notice] %></div>
+        <% end %>
+      </div>
+    </div>
+<% end %>
+   
