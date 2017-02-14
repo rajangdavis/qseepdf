@@ -1,7 +1,5 @@
 class ProductSpec < ActiveRecord::Base
-	has_attached_file :front_panel, styles: {
-	    square: '200x200>',
-	}
+	has_attached_file :front_panel
 	has_attached_file :back_panel
 	validates_attachment_content_type :front_panel, :content_type => /\Aimage\/.*\Z/
 	validates_attachment_content_type :back_panel, :content_type => /\Aimage\/.*\Z/
