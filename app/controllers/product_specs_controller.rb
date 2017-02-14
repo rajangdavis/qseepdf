@@ -17,7 +17,7 @@ class ProductSpecsController < ApplicationController
         respond_to do |format|
             format.pdf do
                 @rendered_as = "pdf"
-                render pdf: "show",
+                render pdf: "#{@product_spec.sku_or_nil}",
                        title: "#{@product_spec.sku_or_nil} Product Specifications",
                        margin:{top: 20,bottom:15},
                        footer:{html: {template: 'product_specs/pdf_parts/_footer.html.erb',layout: 'application'}},
