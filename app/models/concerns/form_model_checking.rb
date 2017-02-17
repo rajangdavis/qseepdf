@@ -5,7 +5,7 @@ module FormModelChecking
 		# Various checks when filling out the forms
 
 		def check_for_basic_info
-			check = !self.sku.nil? && !self.channels.nil? && !self.recording_resolutions.nil? && !self.live_viewing_resolutions.nil? && !self.live_fps.nil? && !self.hard_drive_support.nil? && !self.remote_monitoring.nil? && !self.os_compatibility.nil? && !self.product_compatibility.nil? && !self.monitor_connections.nil?
+			check = !self.sku.nil? && !self.channels.nil? && !self.resolution.nil? && !self.display_resolution.nil? && !self.live_fps.nil? && !self.number_of_harddrives.nil? && !self.hdd_tb.nil? && !self.max_users.nil? && !self.os_compatibility.nil? && !self.product_compatibility.nil? && !self.monitor_connections.nil?
 			conditional(check,true,false)
 		end
 

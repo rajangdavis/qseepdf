@@ -43,8 +43,9 @@ class ProductSpecsController < ApplicationController
             @rn_product_series = OSCRuby::ServiceProduct.where(rn_test_client,"parent.lookupName = '#{@product_spec.product_type}'").map{|sp| sp.name}
         end
 
-        RecorderSpecFormAttrs.generate_spec_form_attrs
-        ProductSpecChecks.generate_checks(@product_spec)
+        generate_spec_form_attrs
+        generate_checks(@product_spec)
+
     end
 
     def update

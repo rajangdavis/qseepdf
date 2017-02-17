@@ -1,5 +1,6 @@
 class ProductSpecChecks
 	def self.generate_checks(product_spec)
+        @accessed = "true"
         @product_spec = product_spec
         @check_for_basic_info = @product_spec.check_for_basic_info
         @check_for_recording_resolution = @product_spec.check_for_recording_resolution
