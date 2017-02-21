@@ -21,4 +21,4 @@ module ProductSpecValidations
 		end
 
 	end
-end
+end	

@@ -1,0 +1,2 @@
+<%= if !@rn_product_series.nil? then render :partial => "product_specs/product_specs_form/add_series_and_name" end %>
+<%= if @rn_product_series.nil? && @check_for_basic_info == false then render :partial => "product_specs/product_specs_form/camera_form/basic_camera_info" end %>

@@ -5,6 +5,7 @@
         <%= wicked_pdf_stylesheet_link_tag "pdf"%>
         <%= stylesheet_link_tag "//fonts.googleapis.com/css?family=Roboto:900,400,700,300,500|Roboto+Condensed:400,300,700" %>
     </head>
+    <!-- This pdf_view function is the products_specs_helper -->
     <body class="<%=pdf_view%>" data-no-turbolink="true">
         <div class="pdf_content">
             <% if @rendered_as=="html" %>
@@ -13,8 +14,10 @@
             <% end %>
             <div id="content">
                 <%= render "product_specs/pdf_parts/page_1.html.erb"%>
-                <div class="pagebreak"></div>
-                <%= render "product_specs/pdf_parts/page_2.html.erb"%>
+                <% if !@product_spec.product_type.nil? && !@product_spec.product_type.match(/Camera/)%>
+                    <div class="pagebreak"></div>
+                    <%= render "product_specs/pdf_parts/page_2.html.erb"%>
+                <% end %>
             </div>
         </div>
     </body>

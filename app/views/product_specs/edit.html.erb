@@ -1,15 +1,9 @@
 <h1><%= link_to(@product_spec.sku_or_nil, product_spec_path(format: :pdf)) %></h1>
 
-<%= if !@rn_product_series.nil? then render :partial => "product_specs/product_specs_form/add_series_and_name" end %>
-<%= if @rn_product_series.nil? && @check_for_basic_info == false then render :partial => "product_specs/product_specs_form/basic_dvr_info" end %>
-<%= if @check_for_basic_info && @check_for_recording_resolution == false then render :partial => "product_specs/product_specs_form/more_dvr_info" end %>
-<%= if @check_for_recording_resolution && @check_for_recording_modes == false then render :partial => "product_specs/product_specs_form/recording_modes" end %>
-<%= if @check_for_recording_modes && @check_for_remote_monitoring == false then render :partial => "product_specs/product_specs_form/remote_monitoring" end %>
-<%= if @check_for_remote_monitoring && @check_for_compatibility == false then render :partial => "product_specs/product_specs_form/compatibility" end %>
-<%= if @check_for_compatibility && @check_for_av_ports == false then render :partial => "product_specs/product_specs_form/video_audio_alarm_ports" end %>
-<%= if @check_for_av_ports && @check_for_communication_ports == false then render :partial => "product_specs/product_specs_form/communication_ports" end %>
-<%= if @check_for_communication_ports && @check_for_accessories == false then render :partial => "product_specs/product_specs_form/accessories" end %>
-<%= if @check_for_accessories && @check_for_ptz == false then render :partial => "product_specs/product_specs_form/ptz" end %>
-<%= if @check_for_ptz && @check_for_power == false then render :partial => "product_specs/product_specs_form/power" end %>
-<%= if @check_for_power && @check_for_physical == false then render :partial => "product_specs/product_specs_form/physical" end %>
-<%= if @check_for_physical then render :partial => "product_specs/product_specs_form/photos" end %>
+<%=
+	if @product_spec.product_type.match(/(DVR)|Recorder/)
+		render :partial => "product_specs/product_specs_form/recorder_form"
+	elsif @ps.product_type.match(/(Camera)/)
+		render :partial => "product_specs/product_specs_form/camera_form"
+	end
+%>

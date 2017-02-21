@@ -1,0 +1,21 @@
+<div class="dvr_info">
+    <%= render "product_specs/pdf_parts/page_1/recorder/pdf_main_table_portion.html.erb"%>
+</div>
+<br>
+<div class="left_side">
+    <%= render "product_specs/pdf_parts/page_1/recorder/dvr_info_table.html.erb"%>
+    <%= render "product_specs/pdf_parts/page_1/recorder/recording_resolutions_options.html.erb"%>
+    <%= render "product_specs/pdf_parts/page_1/recorder/recording_modes.html.erb"%>
+    <%= render "product_specs/pdf_parts/page_1/recorder/playback_on_dvr.html.erb"%>
+    <%= render "product_specs/pdf_parts/page_1/recorder/remote_monitoring.html.erb"%>
+</div>
+<div class="right_side">
+    <%= render "product_specs/pdf_parts/page_1/recorder/compatibility.html.erb"%>
+    <%= render "product_specs/pdf_parts/page_1/recorder/video_audio_alarm_ports.html.erb"%>
+    <%= render "product_specs/pdf_parts/page_1/recorder/communication_ports.html.erb"%>
+    <%= render "product_specs/pdf_parts/page_1/recorder/accessories.html.erb"%>
+    <% if @rendered_as == 'html'%>
+	    <%= render "product_specs/pdf_parts/page_2/power.html.erb"%>
+	    <%= render "product_specs/pdf_parts/page_2/physical.html.erb"%>
+	<% end %>
+</div>

@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
 	# Prevent CSRF attacks by raising an exception.
 	# For APIs, you may want to use :null_session instead.
 	protect_from_forgery with: :exception
-	helper_method :pdf_icon, :current_user, :generate_checks, :generate_spec_form_attrs
+	helper_method :pdf_icon, :current_user, :product_check, :generate_checks_and_form_attrs, :white_list_attrs
 	require 'osc_ruby'
 
 	def rn_test_client
@@ -27,26 +27,55 @@ class ApplicationController < ActionController::Base
   		@current_user ||= User.where(id: session[:user_id]).first
 	end
 
-	def generate_checks(product_spec)
-        @product_spec = product_spec
-        @check_for_basic_info = @product_spec.check_for_basic_info
-        @check_for_recording_resolution = @product_spec.check_for_recording_resolution
-        @check_for_recording_modes = @product_spec.check_for_recording_modes
-        @check_for_remote_monitoring = @product_spec.check_for_remote_monitoring
-        @check_for_compatibility = @product_spec.check_for_compatibility
-        @check_for_av_ports = @product_spec.check_for_av_ports
-        @check_for_communication_ports = @product_spec.check_for_communication_ports
-        @check_for_accessories = @product_spec.check_for_accessories
-        @check_for_ptz = @product_spec.check_for_ptz
-        @check_for_power = @product_spec.check_for_power
-        @check_for_physical = @product_spec.check_for_physical
+    def generate_checks_and_form_attrs(ps)
+        @ps = ps
+        product_check(@ps)
+    end
+
+    def product_check(product_spec)
+        @ps = product_spec
+        if @ps.class.name.match(/(DVR|Recorder)/)
+            recorder_checks(@ps)
+            recorder_form_attrs
+        elsif @ps.class.name.match(/Camera/)
+            camera_checks(@ps)
+            camera_form_attrs
+        else
+            acc_check(@ps)
+            acc_form_attrs
+        end
+        @product_check = @ps.product_type
+    end
+
+    def acc_check(product_spec)
+        @ps = product_spec
+    end
+
+    def camera_checks(product_spec)
+        @ps = product_spec
+        @check_for_basic_info = @ps.check_for_basic_info
+    end
+
+	def recorder_checks(product_spec)
+        @ps = product_spec
+        @check_for_basic_info = @ps.check_for_basic_info
+        @check_for_recording_resolution = @ps.check_for_recording_resolution
+        @check_for_recording_modes = @ps.check_for_recording_modes
+        @check_for_remote_monitoring = @ps.check_for_remote_monitoring
+        @check_for_compatibility = @ps.check_for_compatibility
+        @check_for_av_ports = @ps.check_for_av_ports
+        @check_for_communication_ports = @ps.check_for_communication_ports
+        @check_for_accessories = @ps.check_for_accessories
+        @check_for_ptz = @ps.check_for_ptz
+        @check_for_power = @ps.check_for_power
+        @check_for_physical = @ps.check_for_physical           
 	end
 
 	def map_to_select(arr)
         arr.map{|arr_contents|[arr_contents,arr_contents]}
     end
 
-    def generate_spec_form_attrs
+    def recorder_form_attrs
         @channels = map_to_select([1,2,4,8,9,10,12,16,32])
         @display_channels = map_to_select([1,4,8,9,16,"Auto Sequence"])
         @recording_resolutions = map_to_select(['12MP','8MP','6MP','5MP','4MP','3MP','1080p','720p','D1'])
@@ -65,6 +94,31 @@ class ApplicationController < ActionController::Base
         @mounting_hardware = map_to_select(["Screws for Hard Drive"])
         @other_accessories = map_to_select(["Quick Start Guide"])
         @ptz_protocols = map_to_select(["COC","Null ","Pelco P","Pelco D","Lilin","Minking","Neon","Star","VIDO","DSCP","VISCA","Samsung","RM110","HY"])
+    end
+
+    def camera_form_attrs
+    end
+
+    def acc_form_attrs
+    end
+
+    def white_list_attrs
+        @ps_json = ProductSpec.new.as_json
+        @ps_hash = @ps_json.to_hash.symbolize_keys.except(:id)
+
+        @ps_white_list = []
+
+        @ps_hash.each do |k,v|
+            modded_key = k.to_s.gsub(/(_file_name|_content_type|_file_size|_updated_at)/,'')
+            if v.is_a? Array
+                new_hash = {k.to_sym => v}
+                @ps_white_list.push(new_hash)
+            elsif !@ps_white_list.include?(modded_key.to_sym)
+                @ps_white_list.push(modded_key.to_sym)
+            end
+        end
+
+        @ps_white_list.map{|ps|ps}
     end
 
 end

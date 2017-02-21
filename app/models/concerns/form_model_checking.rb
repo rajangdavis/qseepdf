@@ -60,5 +60,16 @@ module FormModelChecking
 		end
 
 	end
+
+	module Cameras
+
+		# Various checks when filling out the forms
+
+		def check_for_basic_info
+			check = !self.sku.nil? 
+			conditional(check,true,false)
+		end
+
+	end
 	
 end
