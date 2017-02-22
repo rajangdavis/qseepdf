@@ -5,8 +5,12 @@
 			Technology is: <span class=""><%=@product_spec.technology%></span>
 		</div>
 		<div class="form-group">
-			<%= f.label "What kind of cameras does this product connect with?" %>
-		    <%= f.text_field(:connects_with, value:@product_spec.product_compatibility) %>
+			<%= f.label "What kind of camera is this?" %>
+		    <%= f.select(:camera_type, @camera_types,{},{:size => @camera_types.size,:class =>"form-control"}) %>
+		</div>
+		<div class="form-group">
+			<%= f.label :ir_cut_filter, "Does this camera have an IR Cut Filter?" %>
+		    <%= f.select(:ir_cut_filter, @yes_or_no,{},{:size => @yes_or_no.size,:class =>"form-control"}) %>
 		</div>
 		<%= f.submit "Update Spec Sheet", :class => "btn btn-default" %>
 	<% end %>

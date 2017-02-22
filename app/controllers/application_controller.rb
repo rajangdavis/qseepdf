@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
 	# Prevent CSRF attacks by raising an exception.
 	# For APIs, you may want to use :null_session instead.
 	protect_from_forgery with: :exception
-	helper_method :pdf_icon, :current_user, :product_check, :generate_checks_and_form_attrs, :white_list_attrs
+	helper_method :pdf_icon, :current_user, :generate_checks_and_form_attrs, :white_list_attrs
 	require 'osc_ruby'
 
 	def rn_test_client
@@ -27,12 +27,7 @@ class ApplicationController < ActionController::Base
   		@current_user ||= User.where(id: session[:user_id]).first
 	end
 
-    def generate_checks_and_form_attrs(ps)
-        @ps = ps
-        product_check(@ps)
-    end
-
-    def product_check(product_spec)
+    def generate_checks_and_form_attrs(product_spec)
         @ps = product_spec
         if @ps.class.name.match(/(DVR|Recorder)/)
             recorder_checks(@ps)
@@ -97,6 +92,8 @@ class ApplicationController < ActionController::Base
     end
 
     def camera_form_attrs
+        @yes_or_no = map_to_select(['Yes','No'])
+        @camera_types = map_to_select(["Dome","Bullet","PTZ","PT"])
     end
 
     def acc_form_attrs

@@ -66,9 +66,51 @@ module FormModelChecking
 		# Various checks when filling out the forms
 
 		def check_for_basic_info
-			check = !self.sku.nil? 
+			check = !self.sku.nil? && !self.camera_type.nil? &&!self.image_sensor_size.nil? &&!self.sensor_type.nil? &&!self.image_resolution.nil? &&!self.effective_pixels.nil? &&!self.lens_size.nil? &&!self.angle_of_view_min.nil? &&!self.angle_of_view_max.nil? &&!self.ir_cut_filter.nil?
 			conditional(check,true,false)
 		end
+
+		def check_for_night_vision
+			check = !self.ir_leds.nil? && !self.infrared_wavelength.nil? && !self.min_lux_illumination.nil? && !self.night_vision_range.nil?
+			conditional(check,true,false)
+		end
+
+		def check_for_additional_image_features
+			check = !self.auto_iris.nil? && !self.on_screen_display.nil? && !self.backlight_compensation.nil? && !self.electronic_shutter.nil? && !self.gain_control.nil? && !self.wide_dynamic_range.nil? && !self.noise_reduction.nil? 
+			conditional(check,true,false)
+		end
+
+		def check_for_remote_monitoring
+			check = !self.use_as_standalone.nil? &&!self.mobile_support.nil? && !self.connects_with.nil?
+			conditional(check,true,false)
+		end
+
+		def check_for_physical_attributes
+			check = !self.weather_proof.nil? &&!self.ip_rating.empty? &&!self.body_construction.nil? &&!self.dimension_with_bracket.nil? &&!self.operating_temperature.nil? &&!self.mounting_hardware.nil? &&!self.weight.nil? &&!self.dimensions.nil?			
+			conditional(check,true,false)
+		end
+
+		def check_for_ptz
+			check = !self.horizontal_rotation.nil? && !self.vertical_tilt.nil? && !self.preset_and_cruise_patterns.empty? && !self.ptz_zoom.empty? && !self.ptz_focus.nil?
+			conditional(check,true,false)
+		end
+
+		def check_for_audio
+			check = !self.audio_range.nil? && !self.audio_microphone.nil?
+			conditional(check,true,false)
+		end
+
+		def check_for_connectivity
+			# figure out connector types
+			check = !self.other_connections.nil? && !self.wireless.nil? 
+			conditional(check,true,false)
+		end
+
+		def check_for_power
+			check = !self.power_supply.nil? && !self.power_consumption.nil?
+			conditional(check,true,false)
+		end
+
 
 	end
 	
