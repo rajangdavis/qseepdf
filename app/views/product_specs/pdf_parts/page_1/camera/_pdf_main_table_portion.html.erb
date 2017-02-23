@@ -1,0 +1,38 @@
+<h1 class="product_title <%= @product_spec.technology%>"><%= @product_spec.sku%></h1>
+<div class="main_table_div">
+    <table id="main_table" class="main main_table">
+        <tr>
+            <th>Camera Type</th><td><%= @product_spec.camera_type%></td>
+        </tr>
+        <tr>
+            <th>Camera Technology</th><td><%= @product_spec.technology%></td>
+        </tr>
+        <tr>
+            <th>Image Sensor Size</th><td><%= @product_spec.technology%></td>
+        </tr>
+        <tr>
+            <th>Image Sensor Type</th><td><%= @product_spec.technology%></td>
+        </tr>
+        <tr>
+            <th>Image Resolution</th><td><%= @product_spec.technology%></td>
+        </tr>
+        <tr>
+            <th>Megapixels (digital)</th><td><%= @product_spec.technology%></td>
+        </tr>
+        <tr>
+            <th>Effective Pixels</th><td><%= @product_spec.technology%></td>
+        </tr>
+        <tr>
+            <th>Lens Size</th><td><%= @product_spec.technology%></td>
+        </tr>
+        <tr>
+            <th>Angle of View</th><td><%= @product_spec.technology%></td>
+        </tr>
+        <tr>
+            <th>IR Cut Filter</th><td><%= @product_spec.ir_cut_filter%></td>
+        </tr>
+    </table>
+</div>
+<div class="main_table_div">
+    <%#= image_tag @product_spec.front_panel.url %>
+</div>
