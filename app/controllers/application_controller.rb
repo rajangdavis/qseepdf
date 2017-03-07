@@ -94,6 +94,8 @@ class ApplicationController < ActionController::Base
     def camera_form_attrs
         @yes_or_no = map_to_select(['Yes','No'])
         @camera_types = map_to_select(["Dome","Bullet","PTZ","PT"])
+        @image_sensor_sizes = map_to_select(['1/3"','1/4"'])
+        @sensor_types = map_to_select(["CMOS","CCD"])
     end
 
     def acc_form_attrs

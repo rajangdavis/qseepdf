@@ -126,4 +126,12 @@ module ProductSpecTerms
 	 		"#{self.weight.to_s} lbs"
 	 	end
 	end
+
+	module Cameras
+
+		def angle_of_view
+			"#{self.angle_of_view_min} to #{self.angle_of_view_max}"
+		end
+
+	end
 end

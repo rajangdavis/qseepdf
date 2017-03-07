@@ -12,6 +12,34 @@
 			<%= f.label :ir_cut_filter, "Does this camera have an IR Cut Filter?" %>
 		    <%= f.select(:ir_cut_filter, @yes_or_no,{},{:size => @yes_or_no.size,:class =>"form-control"}) %>
 		</div>
+		<div class="form-group">
+			<%= f.label :image_sensor_size, "What is the image sensor size for this camera?" %>
+		    <%= f.select(:image_sensor_size, @image_sensor_sizes,{},{:size => @image_sensor_sizes.size,:class =>"form-control"}) %>
+		</div>
+		<div class="form-group">
+			<%= f.label :sensor_type, "What is the image sensor size for this camera?" %>
+		    <%= f.select(:sensor_type, @sensor_types,{},{:size => @sensor_types.size,:class =>"form-control"}) %>
+		</div>
+		<div class="form-group">
+			<%= f.label :image_resolution, "What is the image resolution for this camera?" %>
+		    <%= f.text_field(:image_resolution, :class =>"form-control") %>
+		</div>
+		<div class="form-group">
+			<%= f.label :effective_pixels, "What are the effective pixels for this camera?" %>
+		    <%= f.text_field(:effective_pixels, :class =>"form-control") %>
+		</div>
+		<div class="form-group">
+			<%= f.label :lens_size, "What is the lens size for this camera?" %>
+		    <%= f.text_field(:lens_size, :class =>"form-control") %>
+		</div>
+		<div class="form-group">
+			<%= f.label :angle_of_view_min, "What is the minimum angle of view (in degrees) for this camera?" %>
+		    <%= f.number_field(:angle_of_view_min, :class =>"form-control") %>
+		</div>
+		<div class="form-group">
+			<%= f.label :angle_of_view_min, "What is the minimum angle of view (in degrees) for this camera?" %>
+		    <%= f.number_field(:angle_of_view_min, :class =>"form-control") %>
+		</div>
 		<%= f.submit "Update Spec Sheet", :class => "btn btn-default" %>
 	<% end %>
 </div>

@@ -17,6 +17,7 @@ end
 class CameraSpec < ProductSpec
 
 	include FormModelChecking::Cameras
+	include ProductSpecTerms::Cameras
 
 	def self.model_name
 	    ProductSpec.model_name
