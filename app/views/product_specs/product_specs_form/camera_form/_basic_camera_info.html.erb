@@ -37,8 +37,8 @@
 		    <%= f.number_field(:angle_of_view_min, :class =>"form-control") %>
 		</div>
 		<div class="form-group">
-			<%= f.label :angle_of_view_min, "What is the minimum angle of view (in degrees) for this camera?" %>
-		    <%= f.number_field(:angle_of_view_min, :class =>"form-control") %>
+			<%= f.label :angle_of_view_max, "What is the maximum angle of view (in degrees) for this camera?" %>
+		    <%= f.number_field(:angle_of_view_max, :class =>"form-control") %>
 		</div>
 		<%= f.submit "Update Spec Sheet", :class => "btn btn-default" %>
 	<% end %>
