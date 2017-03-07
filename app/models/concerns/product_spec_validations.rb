@@ -21,6 +21,5 @@ module ProductSpecValidations
 			validates_attachment_content_type :front_panel, :content_type => /\Aimage\/.*\Z/
 			validates_attachment_content_type :back_panel, :content_type => /\Aimage\/.*\Z/
 		end
-
 	end
 end	

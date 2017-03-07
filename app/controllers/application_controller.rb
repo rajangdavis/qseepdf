@@ -49,6 +49,7 @@ class ApplicationController < ActionController::Base
     def camera_checks(product_spec)
         @ps = product_spec
         @check_for_basic_info = @ps.check_for_basic_info
+        @check_for_night_vision = @ps.check_for_night_vision
     end
 
 	def recorder_checks(product_spec)
