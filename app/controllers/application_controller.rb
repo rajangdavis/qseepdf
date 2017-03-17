@@ -75,7 +75,7 @@ class ApplicationController < ActionController::Base
         @channels = map_to_select([1,2,4,8,9,10,12,16,32])
         @display_channels = map_to_select([1,4,8,9,16,"Auto Sequence"])
         @recording_resolutions = map_to_select(['12MP','8MP','6MP','5MP','4MP','3MP','1080p','720p','D1'])
-        @display_resolutions = map_to_select(['4k','1080p','1280x1024','720p','1024x768'])
+        @display_resolutions = map_to_select(['4k','1080p','1920x1080','1280x1024','720p','1024x768','1280x720'])
         @video_compression = map_to_select(['H.265','H.264','MJPEG','MJPEG4'])
         @recording_modes = map_to_select(['Manual','Time Schedule','Motion Detection','Sensor'])
         @backup_methods = map_to_select(['PC','USB Flash','Hard Drive'])

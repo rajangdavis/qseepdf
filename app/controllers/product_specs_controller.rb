@@ -1,5 +1,4 @@
 class ProductSpecsController < ApplicationController
-
     before_action :set_product_spec, only: [:show, :edit, :update]
     
     def new
