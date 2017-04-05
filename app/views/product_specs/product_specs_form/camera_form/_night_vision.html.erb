@@ -1,1 +1,26 @@
-_night_vision.html.erb
+<div class="col-lg-5">
+	<%= form_for @product_spec do |f| %>
+		<h2 class="">Night Vision</h2>
+		<div class="form-group">
+			<%= f.label "What is the number of IR LED's supported by this product?" %>
+			<br>
+		    <%= f.number_field(:ir_leds, min: 1) %>
+		</div>
+		<div class="form-group">
+			<%= f.label "What is the infrared wavelength (in nM) range supported by this product?" %>
+			<br>
+		    <%= f.number_field(:infrared_wavelength) %>
+		</div>
+		<div class="form-group">
+			<%= f.label "What is the minimum lux illumination (in LED's) supported by this product?" %>
+			<br>
+		    <%= f.number_field(:min_lux_illumination) %>
+		</div>
+		<div class="form-group">
+			<%= f.label "What is the night vision range (in feet) supported by this product?" %>
+			<br>
+		    <%= f.number_field(:night_vision_range) %>
+		</div>
+		<%= f.submit "Update Spec Sheet", :class => "btn btn-default" %>
+	<% end %>
+</div>

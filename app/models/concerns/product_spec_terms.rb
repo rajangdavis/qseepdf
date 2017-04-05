@@ -133,5 +133,17 @@ module ProductSpecTerms
 			"#{self.angle_of_view_min} to #{self.angle_of_view_max}"
 		end
 
+		def ir_wavelength
+			"#{self.infrared_wavelength}nM"
+		end
+
+		def lux_leds
+			"#{min_lux_illumination} Lux LEDS on"
+		end
+
+		def night_vision_range_in_feet
+			"Up to #{night_vision_range}ft"
+		end
+
 	end
 end
