@@ -40,10 +40,6 @@
 			<%= f.label "What kind of cameras does this product connect with?" %>
 		    <%= f.text_field(:connects_with, value:@product_spec.product_compatibility) %>
 		</div>
-		<div class="form-group">
-			<%= f.label "What kind of monitor connections are supported by this product?" %>
-		    <%= f.text_field(:monitor_connections) %>
-		</div>
 		<%= f.submit "Update Spec Sheet", :class => "btn btn-default" %>
 	<% end %>
 </div>

@@ -1,3 +1,4 @@
 <%= if !@rn_product_series.nil? then render :partial => "product_specs/product_specs_form/add_series_and_name" end %>
 <%= if @rn_product_series.nil? && @check_for_basic_info == false then render :partial => "product_specs/product_specs_form/camera_form/basic_camera_info" end %>
 <%= if @check_for_basic_info && @check_for_night_vision == false then render :partial => "product_specs/product_specs_form/camera_form/night_vision" end %>
+<%= if @check_for_night_vision then render :partial => "product_specs/product_specs_form/camera_form/additional_image_features" end %>

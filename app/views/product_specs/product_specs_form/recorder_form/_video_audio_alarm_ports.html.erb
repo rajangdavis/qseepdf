@@ -6,6 +6,10 @@
 		    <%= f.number_field(:video_in, :value =>@product_spec.channels) %>
 		</div>
 		<div class="form-group">
+			<%= f.label "What type of monitor connections are supported by this product?" %>
+		    <%= f.number_field(:monitor_connections) %>
+		</div>
+		<div class="form-group">
 			<%= f.label "What is the number alarm in of for this product?" %>
 		    <%= f.number_field(:alarm_in) %>
 		</div>
@@ -17,10 +21,18 @@
 			<%= f.label "What is the number audio in of for this product?" %>
 		    <%= f.number_field(:audio_in) %>
 		</div>
+		<!-- <div class="form-group">
+			<%#= f.label "What is the number audio in of for this product?" %>
+		    <%#= f.number_field(:audio_in_comments) %>
+		</div> -->
 		<div class="form-group">
 			<%= f.label "What is the number audio out of for this product?" %>
 		    <%= f.number_field(:audio_out) %>
 		</div>
+		<!-- <div class="form-group">
+			<%#= f.label "What is the number audio in of for this product?" %>
+		    <%#= f.number_field(:audio_out_comments) %>
+		</div> -->
 		<%= f.submit "Update Spec Sheet", :class => "btn btn-default" %>
 	<% end %>
 </div>
