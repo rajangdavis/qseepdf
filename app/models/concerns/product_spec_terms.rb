@@ -3,11 +3,11 @@ module ProductSpecTerms
 	module Recorders
 
 		def recording_resolutions 
-			self.resolution.map {|rr| rr}.join("/")
+			self.resolution.map {|rr| rr}.reject{|x| x.blank?}.join("/")
 		end
 
 		def live_viewing_resolutions 
-			self.display_resolution.map {|dr| dr}.join("/")
+			self.display_resolution.map {|dr| dr}.reject{|x| x.blank?}.join("/")
 		end
 
 		def live_fps
@@ -27,19 +27,19 @@ module ProductSpecTerms
 		end
 
 		def video_compression_list 
-			self.video_compression.map {|vc| vc}.join("/")
+			self.video_compression.map {|vc| vc}.reject{|x| x.blank?}.join("/")
 		end
 
 		def display_modes_list 
-			self.display_modes.map {|dm| dm}.join("/")
+			self.display_modes.map {|dm| dm}.reject{|x| x.blank?}.join("/")
 		end
 
 		def recording_modes_list 
-			self.recording_modes.map {|rm| rm}.join(", ")
+			self.recording_modes.map {|rm| rm}.reject{|x| x.blank?}.join(", ")
 		end
 
 		def backup_methods_list 
-			self.backup_methods.map {|bm| bm}.join(", ")
+			self.backup_methods.map {|bm| bm}.reject{|x| x.blank?}.join(", ")
 		end
 
 		def os_compat
@@ -55,19 +55,19 @@ module ProductSpecTerms
 		end
 
 		def dual_stream_options_list
-			conditional(!self.dual_stream.nil?,self.dual_stream.map{|ds| ds}.join(', '),'Dual Stream not supported')
+			conditional(!self.dual_stream.nil?,self.dual_stream.map{|ds| ds}.reject{|x| x.blank?}.join(', '),'Dual Stream not supported')
 		end
 
 		def software_support_list
-			self.application_support.map{|as| as}.join(', ')
+			self.application_support.map{|as| as}.reject{|x| x.blank?}.join(', ')
 		end
 
 		def mobile_support_list
-			self.mobile_support.map{|ms| ms}.join(', ')
+			self.mobile_support.map{|ms| ms}.reject{|x| x.blank?}.join(', ')
 		end
 
 	 	def computer_support_list
-	 		self.computer_support.map{|cs| cs}.join(', ')
+	 		self.computer_support.map{|cs| cs}.reject{|x| x.blank?}.join(', ')
 	 	end
 
 	 	def usb_support
@@ -98,28 +98,28 @@ module ProductSpecTerms
 	 	end
 
 	 	def network_cap
-	 		speed = self.network_ports.map {|n| n}.join('/')
+	 		speed = self.network_ports.map {|n| n}.reject{|x| x.blank?}.join('/')
 	 		"RJ45 #{speed} Mbps"
 	 	end
 
 	 	def remote_control_options
-	 		self.remote_control.map { |rc| rc }.join(',')
+	 		self.remote_control.map { |rc| rc }.reject{|x| x.blank?}.join(',')
 	 	end
 
 	 	def connectors_or_cables_options
-	 		self.connectors_or_cables.map { |coc| coc }.join(', ')
+	 		self.connectors_or_cables.map { |coc| coc }.reject{|x| x.blank?}.join(', ')
 	 	end
 
 	 	def mounting_hardware_options
-	 		self.mounting_hardware.map { |mh| mh }.join(', ')
+	 		self.mounting_hardware.map { |mh| mh }.reject{|x| x.blank?}.join(', ')
 	 	end
 
 	 	def other_accessories_options
-	 		self.other_accessories.map { |oa| oa }.join(', ')
+	 		self.other_accessories.map { |oa| oa }.reject{|x| x.blank?}.join(', ')
 	 	end
 
 	 	def ptz_protocol_options
-	 		self.ptz_protocols.map { |pp| pp.gsub(/\s+/, "")  }.join(', ')
+	 		self.ptz_protocols.map { |pp| pp.gsub(/\s+/, "")  }.reject{|x| x.blank?}.join(', ')
 	 	end
 
 	 	def weight_in_lbs
