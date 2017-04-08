@@ -4,12 +4,12 @@
     <th colspan="2" class="special_header <%= @product_spec.technology%>">Remote Monitoring</th>
   </tr>
   <tr>
-    <th>Use as Standalone</th><td><%= %></td>
+    <th>Use as Standalone</th><td><%= @product_spec.use_as_standalone%></td>
   </tr>
   <tr>
-    <th>Compatible Mobile Devices</th><td><%= %></td>
+    <th>Compatible Mobile Devices</th><td><%= @product_spec.mobile_support_list%></td>
   </tr>
   <tr>
-    <th>Compatible Systems</th><td><%= %></td>
+    <th>Compatible Systems</th><td><%= @product_spec.connects_with%></td>
   </tr>
 </table> 

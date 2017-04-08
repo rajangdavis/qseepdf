@@ -94,17 +94,19 @@ class ApplicationController < ActionController::Base
         @network_ports = map_to_select(["10","100","1000"])
         @remote_control = map_to_select(["USB Mouse","Remote Control"])
         @connectors_or_cables = map_to_select(["HDMI Cable"])
-        @mounting_hardware = map_to_select(["Screws for Hard Drive"])
+        @mounting_hardware = map_to_select(["Screws","Screws for Hard Drive"])
         @other_accessories = map_to_select(["Quick Start Guide"])
         @ptz_protocols = map_to_select(["COC","Null ","Pelco P","Pelco D","Lilin","Minking","Neon","Star","VIDO","DSCP","VISCA","Samsung","RM110","HY"])
     end
 
     def camera_form_attrs
+        @mounting_hardware = map_to_select(["Screws","Screws for Hard Drive"])
         @yes_or_no = map_to_select(['Yes','No'])
         @camera_types = map_to_select(["Dome","Bullet","PTZ","PT"])
         @image_sensor_sizes = map_to_select(['1/3"','1/4"'])
         @sensor_types = map_to_select(["CMOS","CCD"])
         @supported_mobile_devices = map_to_select(['Android','iPhone','iPad'])
+        @ip_ratings = map_to_select(['IP65','IP66'])
     end
 
     def acc_form_attrs

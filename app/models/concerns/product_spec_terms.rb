@@ -145,5 +145,17 @@ module ProductSpecTerms
 			"Up to #{night_vision_range}ft"
 		end
 
+		def mobile_support_list
+			self.mobile_support.map{|ms| ms}.reject{|x| x.blank?}.join(', ')
+		end
+
+		def ip_rating_flat
+			self.ip_rating.map{|ip_rating| ip_rating}.reject{|x| x.blank?}[0]
+		end		
+
+		def mounting_hardware_options
+	 		self.mounting_hardware.map { |mh| mh }.reject{|x| x.blank?}.join(', ')
+	 	end
+
 	end
 end
