@@ -1,4 +1,11 @@
 <%= if !@rn_product_series.nil? then render :partial => "product_specs/product_specs_form/add_series_and_name" end %>
 <%= if @rn_product_series.nil? && @check_for_basic_info == false then render :partial => "product_specs/product_specs_form/camera_form/basic_camera_info" end %>
 <%= if @check_for_basic_info && @check_for_night_vision == false then render :partial => "product_specs/product_specs_form/camera_form/night_vision" end %>
-<%= if @check_for_night_vision then render :partial => "product_specs/product_specs_form/camera_form/additional_image_features" end %>
+<%= if @check_for_night_vision && @check_for_additional_image_features ==  false then render :partial => "product_specs/product_specs_form/camera_form/additional_image_features" end %>
+<%= if @check_for_additional_image_features && @check_for_remote_monitoring == false then render :partial => "product_specs/product_specs_form/camera_form/remote_monitoring" end %>
+<%= if @check_for_remote_monitoring && @check_for_physical_attributes== false then render :partial => "product_specs/product_specs_form/camera_form/physical_attributes" end %>
+<%= if @check_for_physical_attributes && @check_for_ptz == false then render :partial => "
+	product_specs/product_specs_form/camera_form/ptz" end %>
+<%= if @check_for_ptz  && @check_for_audio== false then render :partial => "product_specs/product_specs_form/camera_form/audio" end %>
+<%= if @check_for_audio && @check_for_connectivity == false then render :partial => "product_specs/product_specs_form/camera_form/connectivity" end %>
+<%= if @check_for_connectivity && @check_for_power== false then render :partial => "product_specs/product_specs_form/camera_form/power" end %>

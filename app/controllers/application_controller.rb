@@ -50,6 +50,13 @@ class ApplicationController < ActionController::Base
         @ps = product_spec
         @check_for_basic_info = @ps.check_for_basic_info
         @check_for_night_vision = @ps.check_for_night_vision
+        @check_for_additional_image_features = @ps.check_for_additional_image_features
+        @check_for_remote_monitoring = @ps.check_for_remote_monitoring
+        @check_for_physical_attributes = @ps.check_for_physical_attributes
+        @check_for_ptz = @ps.check_for_ptz
+        @check_for_audio = @ps.check_for_audio
+        @check_for_connectivity = @ps.check_for_connectivity
+        @check_for_power = @ps.check_for_power
     end
 
 	def recorder_checks(product_spec)

@@ -1,1 +1,34 @@
-_additional_image_features.html.erb
+<div class="col-lg-7">
+	<%= form_for @product_spec do |f| %>
+		<h2 class="">Additional Image Features</h2>
+		<div class="form-group">
+			<%= f.label :auto_iris, "Is auto iris supported by this product? (if it is, list it please; if not put 'No')" %>
+		    <%= f.text_field(:auto_iris,{:class=>"form-control"})%>
+		</div>
+		<div class="form-group">
+			<%= f.label :on_screen_display, "Is on screen display supported by this product? (if it is, list it please; if not put 'No')" %>
+		    <%= f.text_field(:on_screen_display,{:class=>"form-control"})%>
+		</div>
+		<div class="form-group">
+			<%= f.label :backlight_compensation, "Is backlight compensationed by this product? (if it is, list it please; if not put 'No')" %>
+		    <%= f.text_field(:backlight_compensation,{:class=>"form-control"})%>
+		</div>
+		<div class="form-group">
+			<%= f.label :electronic_shutter, "Is electronic shutter supported by this product? (if it is, list it please; if not put 'No')" %>
+		    <%= f.text_field(:electronic_shutter,{:class=>"form-control"})%>
+		</div>
+		<div class="form-group">
+			<%= f.label :gain_control, "Is gain control supported by this product? (if it is, list it please; if not put 'No')" %>
+		    <%= f.text_field(:gain_control,{:class=>"form-control"})%>
+		</div>
+		<div class="form-group">
+			<%= f.label :wide_dynamic_range, "Is wide dynamic range supported by this product? (if it is, list it please; if not put 'No')" %>
+		    <%= f.text_field(:wide_dynamic_range,{:class=>"form-control"})%>
+		</div>
+		<div class="form-group">
+			<%= f.label :noise_reduction, "Is noise reduction supported by this product? (if it is, list it please; if not put 'No')" %>
+		    <%= f.text_field(:noise_reduction,{:class=>"form-control"})%>
+		</div>
+		<%= f.submit "Update Spec Sheet", :class => "btn btn-default" %>
+	<% end %>
+</div>
