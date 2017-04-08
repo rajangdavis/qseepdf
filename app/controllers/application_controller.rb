@@ -104,6 +104,7 @@ class ApplicationController < ActionController::Base
         @camera_types = map_to_select(["Dome","Bullet","PTZ","PT"])
         @image_sensor_sizes = map_to_select(['1/3"','1/4"'])
         @sensor_types = map_to_select(["CMOS","CCD"])
+        @supported_mobile_devices = map_to_select(['Android','iPhone','iPad'])
     end
 
     def acc_form_attrs
