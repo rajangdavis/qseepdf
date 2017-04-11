@@ -36,6 +36,9 @@ h2.product_title{
 	width:50%;
 	float:right;
 }
+.main_table_div.camera img{
+	margin-top: -50px;
+}
 .dvr_info img{
 	display: block;
 	margin: 0 auto;
