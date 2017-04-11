@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170221231812) do
+ActiveRecord::Schema.define(version: 20170411055750) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -109,6 +109,12 @@ ActiveRecord::Schema.define(version: 20170221231812) do
     t.string   "audio_microphone"
     t.string   "other_connections"
     t.string   "wireless"
+    t.string   "camera_image_file_name"
+    t.string   "camera_image_content_type"
+    t.integer  "camera_image_file_size"
+    t.datetime "camera_image_updated_at"
+    t.string   "audio_in_comments"
+    t.string   "audio_out_comments"
   end
 
   add_index "product_specs", ["user_id"], name: "index_user_id", using: :btree

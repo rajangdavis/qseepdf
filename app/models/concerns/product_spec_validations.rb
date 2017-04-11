@@ -22,4 +22,13 @@ module ProductSpecValidations
 			validates_attachment_content_type :back_panel, :content_type => /\Aimage\/.*\Z/
 		end
 	end
+	
+	module Cameras
+		extend ActiveSupport::Concern
+		
+		included do
+			has_attached_file :camera_image
+			validates_attachment_content_type :camera_image, :content_type => /\Aimage\/.*\Z/
+		end
+	end
 end	

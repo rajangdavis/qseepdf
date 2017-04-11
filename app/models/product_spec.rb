@@ -18,6 +18,7 @@ class CameraSpec < ProductSpec
 
 	include FormModelChecking::Cameras
 	include ProductSpecTerms::Cameras
+	include ProductSpecValidations::Cameras
 
 	def self.model_name
 	    ProductSpec.model_name
