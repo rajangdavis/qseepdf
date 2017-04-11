@@ -107,6 +107,9 @@ class ApplicationController < ActionController::Base
         @sensor_types = map_to_select(["CMOS","CCD"])
         @supported_mobile_devices = map_to_select(['Android','iPhone','iPad'])
         @ip_ratings = map_to_select(['IP65','IP66'])
+        @ptz_options = map_to_select(['Not Applicable','300 Presets','5 pattern','8 tour','Auto Pan','Auto Scan'])
+        @zoom_options = map_to_select(['Not Applicable','30x Optical','16x Digital','4x Optical','16x Digital','12x Optical','16x Digital'])
+        @connectors_or_cables = map_to_select(["HDMI Cable","RJ45 POE ONVIF2.3 Profile S"])
     end
 
     def acc_form_attrs

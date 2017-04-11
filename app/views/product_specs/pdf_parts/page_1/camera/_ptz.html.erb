@@ -4,12 +4,20 @@
     <th colspan="2" class="special_header grey_scale">PTZ</th>
   </tr>
   <tr>
-    <th>Horizontal Rotation</th><td><%= %></td>
+    <th>Horizontal Rotation</th><td><%= @product_spec.horizontal_rotation%></td>
   </tr>
   <tr>
-    <th>Vertical Tilt</th><td><%= %></td>
+    <th>Vertical Tilt</th><td><%= @product_spec.vertical_tilt%></td>
   </tr>
   <tr>
-    <th>Preset and Cruise Patterns</th><td><%= %></td>
+    <th>Preset and Cruise Patterns</th><td><%= @product_spec.ptz_cruise_patterns%></td>
   </tr>
+  <% if @product_spec.horizontal_rotation!="Not Applicable"%>
+  <tr>
+    <th>Zoom</th><td><%= @product_spec.ptz_zoom%></td>
+  </tr>
+  <tr>
+    <th>Focus</th><td><%= @product_spec.ptz_focus%></td>
+  </tr>
+  <% end %>
 </table> 

@@ -1,1 +1,14 @@
-_audio.html.erb
+<div class="col-lg-5">
+	<%= form_for @product_spec do |f| %>
+		<h2 class="">Audio</h2>
+		<div class="form-group">
+			<%= f.label :audio_range, "What is the audio range supported by this product?" %>
+		    <%= f.text_field :audio_range,:class => "form-control", :value => "Depends on Microphone"%>
+		</div>
+		<div class="form-group">
+			<%= f.label :audio_microphone, "How is the audio microphone supported by this product?" %>
+		    <%= f.text_field :audio_microphone,:class => "form-control", :value => "Audio-in/out ports"%>
+		</div>
+		<%= f.submit "Update Spec Sheet", :class => "btn btn-default" %>
+	<% end %>
+</div>

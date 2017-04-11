@@ -8,3 +8,4 @@
 <%= if @check_for_ptz  && @check_for_audio== false then render :partial => "product_specs/product_specs_form/camera_form/audio" end %>
 <%= if @check_for_audio && @check_for_connectivity == false then render :partial => "product_specs/product_specs_form/camera_form/connectivity" end %>
 <%= if @check_for_connectivity && @check_for_power== false then render :partial => "product_specs/product_specs_form/camera_form/power" end %>
+<%= if @check_for_power then 'suh dude' end%>

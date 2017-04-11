@@ -1,1 +1,27 @@
-_ptz.html.erb
+<div class="col-lg-5">
+	<%= form_for @product_spec do |f| %>
+		<h2 class="">PTZ</h2>
+		<div class="form-group">
+			<%= f.label :horizontal_rotation, "How much horizontal rotation is supported by this product?" %>
+		    <%= f.text_field :horizontal_rotation,:class => "form-control", :value => "Not Applicable"%>
+		</div>
+		<div class="form-group">
+			<%= f.label :vertical_tilt, "How much vertical tilt is supported by this product?" %>
+		    <%= f.text_field :vertical_tilt,:class => "form-control", :value => "Not Applicable"%>
+		</div>
+		<div class="form-group">
+			<%= f.label :preset_and_cruise_patterns, 'Which of the following PTZ Preset and Cruise options are supported?' %>
+			<%= f.select(:preset_and_cruise_patterns, @ptz_options,{},{:multiple => true, :size => @ptz_options.size,:class =>"form-control"}) %>
+		</div>
+		<div class="form-group">
+			<%= f.label :ptz_zoom, 'Which of the following PTZ Zoom options are supported?' %>
+			<%= f.select(:ptz_zoom, @zoom_options,{},{ :multiple => true, :size => @zoom_options.size,:class =>"form-control"}) %>
+		</div>
+		<div class="form-group">
+			<%= f.label :ptz_focus, "What type of PTZ Focus is supported by this product?" %>
+		    <%= f.text_field :ptz_focus,:class => "form-control", :value => "Auto focus"%>
+		</div>
+
+		<%= f.submit "Update Spec Sheet", :class => "btn btn-default" %>
+	<% end %>
+</div>

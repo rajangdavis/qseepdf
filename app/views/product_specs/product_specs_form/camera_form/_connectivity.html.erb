@@ -1,1 +1,17 @@
-_connectivity.html.erb
+<div class="col-lg-5">
+	<%= form_for @product_spec do |f| %>
+		<div class="form-group">
+			<%= f.label :connectors_or_cables, 'What connectors or cables come with this product?' %>
+			<%= f.select(:connectors_or_cables, @connectors_or_cables,{},{ :multiple => true, :size => @connectors_or_cables.size,:class =>"form-control"}) %>
+		</div>
+		<div class="form-group">
+			<%= f.label :other_connections, "What other connections are supported by this camera?" %>
+		    <%= f.text_field(:other_connections, :class =>"form-control") %>
+		</div>
+		<div class="form-group">
+			<%= f.label :wireless, "Is this camera wireless?" %>
+		    <%= f.select(:wireless, @yes_or_no,{},{:size => @yes_or_no.size,:class =>"form-control"}) %>
+		</div>
+		<%= f.submit "Update Spec Sheet", :class => "btn btn-default" %>
+	<% end %>
+</div>

@@ -157,5 +157,13 @@ module ProductSpecTerms
 	 		self.mounting_hardware.map { |mh| mh }.reject{|x| x.blank?}.join(', ')
 	 	end
 
+	 	def ptz_cruise_patterns
+	 		self.preset_and_cruise_patterns.map{|pcap| pcap }.reject{|x| x.blank? }.join(', ')
+	 	end
+
+	 	def connectors_or_cables_mapped
+	 		self.connectors_or_cables.map{|coc| coc }.reject{|x| x.blank? }.join(', ')
+	 	end
+
 	end
 end
