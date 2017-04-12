@@ -18,19 +18,21 @@
 		<div class="panel-heading">
 			<h2 class="header">Duplicate a Product Spec</h2>
 		</div>
-		<%= form_for @product_spec do |f| %>
+
+		<%= form_tag("/duplicate", method: "post") do %>
 			<div class="form-group panel-body">
 				<table class="table">
 					<caption>Which spec sheet would you like to duplicate?</caption>
 				</table>
-			    <%= f.select :product_type, options_for_select(@product_specs.map{|ps|ps.sku}),{}, {:class => "form-control"}%>
+		  		
+		  	    <%= select_tag(:product_to_copy, options_for_select(@product_specs.map{|ps|ps.sku}), {:class => "form-control"})%>
 			    <table class="table">
 					<caption>What is the name of product?</caption>
 				</table>
-			    <%= f.text_field :sku, :class => "form-control"%>
+			 	<%= text_field_tag(:sku,"",{:class => "form-control"}) %>
+			 	<br>
+		  		<%= submit_tag("Duplicate Spec Sheet", :class => "btn btn-default small") %>
 			    <br>
-			    <input type="button" class="btn btn-default small" value="Duplicate Spec Sheet" onclick="alert('doesnt do anything yet...')">
-				<%#= f.submit "Duplicate Spec Sheet", :class => "btn btn-default small" %>
 		    </div>
 		<% end %>
 	</div>

@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :sessions
   delete '/logout' => 'sessions#destroy', as: :logout
 
+  post '/duplicate' => 'product_specs#duplicate'
+
   resources :product_specs, except: :destroy
 
   # The priority is based upon order of creation: first created -> highest priority.

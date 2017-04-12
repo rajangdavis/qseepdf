@@ -1,9 +1,26 @@
 class ProductSpecsController < ApplicationController
-    before_action :set_product_spec, only: [:show, :edit, :update,:edit_specific]
+    before_action :set_product_spec, only: [:show, :edit, :update]
     
     def new
         @product_spec = ProductSpec.new
         create
+    end
+
+    def duplicate
+        @ptc = params[:product_to_copy]
+        @sku = params[:sku]
+
+        @product_to_copy = ProductSpec.where('sku = ?',@ptc)
+
+        @copied_prod = @product_to_copy[0].dup
+
+        @copied_prod.sku = @sku
+
+        if @copied_prod.save
+            redirect_to product_spec_path(@copied_prod)
+        else
+            @error = @copied_prod
+        end
     end
 
     def create

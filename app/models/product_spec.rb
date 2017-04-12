@@ -1,5 +1,6 @@
 class ProductSpec < ActiveRecord::Base
 	include SharedAttributes
+	validates :sku, uniqueness: true
 end
 
 class RecorderSpec < ProductSpec
