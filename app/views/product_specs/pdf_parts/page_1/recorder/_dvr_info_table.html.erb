@@ -1,9 +1,11 @@
 <table class="main smaller">
   <tr class="first">
-    <th colspan="2" class="special_header <%= @product_spec.technology%>">Recorder</th>
+    <th colspan="2" class="special_header <%= @product_spec.technology%>">
+      <%=raw link_to_edit({:ra => @rendered_as,:ps =>@product_spec, :t => "product_specs/product_specs_form/recorder_form/more_dvr_info",:v => "Recorder"})%>
+    </th>
   </tr>
   <tr>
-    <th>Video Compression</th><td><%= @product_spec.video_compression_list%></td>
+    <th>Video Compression</th><td><%= @product_spec.video_compression_list%></td> 
   </tr>
   <tr>
     <th>Live Display Resolution</th><td><%= @product_spec.live_viewing_resolutions%></td>

@@ -1,7 +1,8 @@
 <br>
 <table class="main smaller">
   <tr class="first">
-    <th colspan="2" class="special_header <%= @product_spec.technology%>">Recording Modes</th>
+    <th colspan="2" class="special_header <%= @product_spec.technology%>">
+    	<%=raw link_to_edit({:ra => @rendered_as,:ps =>@product_spec, :t => "product_specs/product_specs_form/recorder_form/recording_modes",:v => "Recording Modes"})%></th>
   </tr>
   <tr>
     <th>Recording Modes</th><td><%= @product_spec.recording_modes_list%></td>

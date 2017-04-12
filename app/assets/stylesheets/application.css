@@ -60,7 +60,7 @@ h3.upcase-title{
     position: relative;
     top: 4px;
 }
-h2.header{
+h2.header,.sign-out{
 	text-transform: uppercase;
     font-family: 'Roboto Condensed';
     font-weight: 400;

@@ -2,7 +2,8 @@
 <table class="main smaller">
   <tbody>
     <tr class="first">
-      <th colspan="2" class="special_header <%= @product_spec.technology%>">Recording Resolution Options</th>
+      <th colspan="2" class="special_header <%= @product_spec.technology%>">
+        <%=raw link_to_edit({:ra => @rendered_as,:ps =>@product_spec, :t => "product_specs/product_specs_form/recorder_form/basic_dvr_info",:v => "Recording Resolution Options"})%></th>
     </tr>
     <td>
       <table class="nested">

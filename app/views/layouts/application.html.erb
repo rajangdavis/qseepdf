@@ -26,7 +26,7 @@
             <%=raw pdf_img %>
           </a>
         </li>
-        <%= if current_user then link_to "Sign Out", logout_path(current_user),:class => "presentation pull-right", method: :delete end %>
+        <%= if current_user then link_to "Sign Out", logout_path(current_user),:class => "presentation pull-right sign-out", method: :delete end %>
       </ul>
     </nav>
   <% end %>
