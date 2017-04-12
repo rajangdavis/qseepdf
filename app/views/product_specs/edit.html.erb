@@ -1,9 +1,11 @@
-<h1><%= link_to(@product_spec.sku_or_nil, product_spec_path(format: :pdf)) %></h1>
-
-<%=
-	if @product_spec.product_type.match(/(DVR)|Recorder/)
-		render :partial => "product_specs/product_specs_form/recorder_form"
-	elsif @ps.product_type.match(/(Camera)/)
-		render :partial => "product_specs/product_specs_form/camera_form"
-	end
-%>
+<div class="col-lg-6">
+	<div class="panel panel-default">
+		<%=
+			if @product_spec.product_type.match(/(DVR)|Recorder/)
+				render :partial => "product_specs/product_specs_form/recorder_form"
+			elsif @ps.product_type.match(/(Camera)/)
+				render :partial => "product_specs/product_specs_form/camera_form"
+			end
+		%>
+	</div>
+</div>

@@ -16,18 +16,58 @@
  */
 body{
 	font-family: 'Roboto', sans-serif;
+	background: white;
+	font-weight: 100;
+	font-size: 14px;
+}
+.q-see-logo{
+	width:28%;
+}
+a.pointer:hover,a.pointer:focus{
+	text-decoration: none;
+	cursor: pointer;
+	background-color: transparent !important;
+}
+label{
+	font-weight: 100;	
 }
 .container.main{
 	margin-top: 75px;
 }
 .navbar.navbar-default.navbar-fixed-top{
-	background: #2c3e50;
+	background: #fec10d;
+	padding: 0 17px;
 }
 .pdf_icon{
-	width: 2%
+	width: 10%
 }
 .login-btn{
 	border: none;
 	margin: 0;
 	background: #eee;
+}
+.presentation.pull-right{
+	margin-top: 15px;
+	font-weight: 200;
+}
+h3.upcase-title{
+	display: inline-block;
+    text-transform: uppercase;
+    margin: 0;
+    position: relative;
+    top: 4px;
+}
+h2.header{
+	text-transform: uppercase;
+	font-family: 'Roboto Condensed';
+	font-weight: 100;
+	font-size: 16px;
+	margin: 0;
+}
+.btn.btn-default{
+	font-weight: 100;
+	font-size: 14px;	
+}
+th.table_links{
+	font-weight: 100 !important;
 }

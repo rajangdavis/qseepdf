@@ -1,9 +1,11 @@
-<div class="col-lg-5">
+<div class="panel-heading">
+	<h2 class="header">Product Series and Name</h2>
+</div>
+<div class="panel-body">
 	<%= form_for @product_spec do |f| %>
-		<h2 class="">Product Series and Name</h2>
 		<div class="form-group">
 			<%= f.label "Which series does this product belong to?" %>
-		    <%= f.select :product_series, options_for_select(@rn_product_series) , :class => "form-control"%>
+		    <%= f.select :product_series, options_for_select(@rn_product_series),{}, {:class => "form-control"}%>
 		</div>
 		<div class="form-group">
 			<%= f.label "What is the name/sku of this product?" %>

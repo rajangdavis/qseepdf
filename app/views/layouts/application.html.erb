@@ -20,12 +20,11 @@
   	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
       <ul class="nav nav-pills container" role="tablist">
         <li role="presentation pull-right">
-          <a href="/">
-            <img src='//i.imgur.com/2S6kiqI.png'>
+          <a href="/" class="pointer">
+            <img class="q-see-logo" src='//i.imgur.com/88IrbjF.png'>
           </a>
         </li>
-        <li class="presentation pull-right"><%= if current_user then link_to "Sign Out", logout_path(current_user),:class => "white-text", method: :delete end %></li>
-        </li>
+        <%= if current_user then link_to "Sign Out", logout_path(current_user),:class => "presentation pull-right", method: :delete end %>
       </ul>
     </nav>
   <% end %>

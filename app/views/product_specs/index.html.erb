@@ -1,20 +1,67 @@
 <div class="col-lg-4">
-	<%= form_for @product_spec do |f| %>
-		<h2 class="">Create a Product Spec</h2>
-		<div class="form-group">
-			<%= f.label "What type of device are you creating a spec sheet for?" %>
-		    <%= f.select :product_type, options_for_select(@rn_product_types) , :class => "form-control"%>
-	    </div>
-		<%= f.submit "Create Spec Sheet", :class => "btn btn-default" %>
-	<% end %>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h2 class="header">Create a Product Spec</h2>
+		</div>
+		<%= form_for @product_spec do |f| %>
+			<div class="form-group panel-body">
+				<table class="table">
+					<caption>What type of device are you creating a spec sheet for?</caption>
+				</table>
+			    <%= f.select :product_type, options_for_select(@rn_product_types),{}, {:class => "form-control"}%>
+			    <br>
+				<%= f.submit "Create Spec Sheet", :class => "btn btn-default small" %>
+		    </div>
+		<% end %>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h2 class="header">Duplicate a Product Spec</h2>
+		</div>
+		<%= form_for @product_spec do |f| %>
+			<div class="form-group panel-body">
+				<table class="table">
+					<caption>Which spec sheet would you like to duplicate?</caption>
+				</table>
+			    <%= f.select :product_type, options_for_select(@product_specs.map{|ps|ps.sku}),{}, {:class => "form-control"}%>
+			    <table class="table">
+					<caption>What is the name of product?</caption>
+				</table>
+			    <%= f.text_field :sku, :class => "form-control"%>
+			    <br>
+			    <input type="button" class="btn btn-default small" value="Duplicate Spec Sheet" onclick="alert('doesnt do anything yet...')">
+				<%#= f.submit "Duplicate Spec Sheet", :class => "btn btn-default small" %>
+		    </div>
+		<% end %>
+	</div>
 </div>
-<%= @answers%>
 <div class="col-lg-8">
-	<h2 class="">Product Specs</h2>
-	<% @product_specs.each do |product_spec|%>
-		<%=link_to "Edit #{product_spec.sku_or_nil} Specification", edit_product_spec_path(product_spec)%> | 
-		<%= link_to 'HTML Spec Sheet', product_spec_path(product_spec)%> |
-		<%= link_to raw(pdf_icon), product_spec_path(product_spec, {format: :pdf})%>
-		<br>
-	<% end %>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h2 class="header">Product Specs</h2>
+		</div>
+		<div class="panel-body">
+			<table class="table" id="main_table">
+				<caption>Here is a list of product specification sheets</caption>
+				<thead>
+					<tr>
+						<th>Model</th> 
+						<th>Edit Link</th> 
+						<th>HTML Link</th> 
+						<th>PDF Link</th> 
+					</tr> 
+				</thead> 
+				<tbody>  
+					<% @product_specs.each do |product_spec|%>
+						<tr>
+							<th class="table_links"><%= product_spec.sku_or_nil%></th>
+							<th class="table_links"><%= link_to "Edit", edit_product_spec_path(product_spec)%></th>
+							<th class="table_links"><%= link_to "HTML", product_spec_path(product_spec)%></th>
+							<th class="table_links"><%= link_to raw(pdf_icon), product_spec_path(product_spec, {format: :pdf})%></th>
+						</tr>
+					<% end %>
+				</tbody> 
+			</table>
+		</div>
+	</div>
 </div>

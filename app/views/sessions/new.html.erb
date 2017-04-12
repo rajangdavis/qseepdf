@@ -14,13 +14,21 @@
   <div class="row signin">
     <div class="col-md-4"></div>
     <div class="col-md-4 form-group divform">
-      <%= f.text_field :username, :class => "form-control", :placeholder =>  "Username" %><br>
-      <div class="input-group"> 
-        <%= f.password_field :password, :id => "password", :class => "form-control", :placeholder => "Password"%>
-        <span class="input-group-addon"><%= f.submit "Log in", :class => "login-btn"%></span>
-        <% if flash[:notice] %><br><br>
-          <div class="text-center bg-danger"><%= flash[:notice] %></div>
-        <% end %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2 class="header">Log In</h2>
+        </div>
+        <div class="panel-body">
+          <%= f.text_field :username, :class => "form-control", :placeholder =>  "Username" %><br>
+          <div class="input-group"> 
+            <%= f.password_field :password, :id => "password", :class => "form-control", :placeholder => "Password"%>
+            <span class="input-group-addon"><%= f.submit "Log in", :class => "login-btn"%></span>
+            <% if flash[:notice] %><br><br>
+              <div class="text-center bg-danger"><%= flash[:notice] %></div>
+            <% end %>
+          </div>
+          <br>
+        </div>
       </div>
     </div>
 <% end %>
