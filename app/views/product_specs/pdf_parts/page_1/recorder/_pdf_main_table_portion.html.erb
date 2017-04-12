@@ -31,5 +31,5 @@
     </table>
 </div>
 <div class="main_table_div">
-    <%= image_tag @product_spec.front_panel.url %>
+    <%=raw link_to_edit({:ra => @rendered_as,:ps =>@product_spec, :t => "product_specs/product_specs_form/recorder_form/photos",:v => (image_tag @product_spec.front_panel.url)})%>
 </div>

@@ -13,4 +13,4 @@
 	</div>
 <% end %>
 <br><br>
-<%= image_tag @product_spec.back_panel.url, :class => 'back_panel'%>
+<%=raw link_to_edit({:ra => @rendered_as,:ps =>@product_spec, :t => "product_specs/product_specs_form/recorder_form/photos",:v => (image_tag @product_spec.back_panel.url, :class => 'back_panel')})%>

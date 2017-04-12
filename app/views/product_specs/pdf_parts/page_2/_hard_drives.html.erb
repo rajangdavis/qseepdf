@@ -1,7 +1,9 @@
 <br>
 <table class="main smaller">
   <tr class="first">
-    <th colspan="2" class="special_header <%= @product_spec.technology%>">Hard Drives</th>
+    <th colspan="2" class="special_header <%= @product_spec.technology%>">
+    <%=raw link_to_edit({:ra => @rendered_as,:ps =>@product_spec, :t => "product_specs/product_specs_form/recorder_form/basic_dvr_info",:v => "Hard Drives"})%>
+    </th>
   </tr>
   <tr>
     <th class="smaller">Maximum Size</th><td><%= @product_spec.hdd_tb%></td>

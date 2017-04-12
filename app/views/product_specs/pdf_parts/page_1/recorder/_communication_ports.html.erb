@@ -1,7 +1,9 @@
 <br>
 <table class="main smaller">
   <tr class="first">
-    <th colspan="2" class="special_header grey_scale">Communication Ports</th>
+    <th colspan="2" class="special_header grey_scale">
+      <%=raw link_to_edit({:ra => @rendered_as,:ps =>@product_spec, :t => "product_specs/product_specs_form/recorder_form/communication_ports",:v => "Communication Ports"})%>
+      </th>
   </tr>
   <tr>
     <th>Network</th><td><%= @product_spec.network_cap%></td>

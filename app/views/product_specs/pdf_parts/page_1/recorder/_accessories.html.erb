@@ -1,7 +1,9 @@
 <br>
 <table class="main smaller">
   <tr class="first">
-    <th colspan="2" class="special_header grey_scale">Accessories</th>
+    <th colspan="2" class="special_header grey_scale">
+      <%=raw link_to_edit({:ra => @rendered_as,:ps =>@product_spec, :t => "product_specs/product_specs_form/recorder_form/accessories",:v => "Accessories"})%>
+      </th>
   </tr>
   <tr>
     <th>Control</th><td><%= @product_spec.remote_control_options%></td>
