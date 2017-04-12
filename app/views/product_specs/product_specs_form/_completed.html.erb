@@ -1,0 +1,8 @@
+<div class="panel-heading">
+	<h2 class="header">Product Spec Completed</h2>
+</div>
+<div class="panel-body">
+	<p>You have completed building a spec for the <%= @product_spec.sku+' '+@product_spec.product_type%>.</p>
+	<p><%=link_to "To edit the spec sheet, click here.", product_spec_path%></p>
+	<p><%=link_to "To preview the spec sheet in PDF format, click here.", product_spec_path(@product_spec, {format: :pdf})%></p>
+</div>

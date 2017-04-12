@@ -21,7 +21,7 @@ body{
 	font-size: 14px;
 }
 .q-see-logo{
-	width:28%;
+	width:22%;
 }
 a.pointer:hover,a.pointer:focus{
 	text-decoration: none;
@@ -41,6 +41,9 @@ label{
 .pdf_icon{
 	width: 10%
 }
+.pdf_icon_small{
+	width: 6%
+}
 .login-btn{
 	border: none;
 	margin: 0;
@@ -59,15 +62,26 @@ h3.upcase-title{
 }
 h2.header{
 	text-transform: uppercase;
-	font-family: 'Roboto Condensed';
-	font-weight: 100;
-	font-size: 16px;
-	margin: 0;
+    font-family: 'Roboto Condensed';
+    font-weight: 400;
+    font-size: 16px;
+    margin: 0;
+    letter-spacing: 1px;
 }
 .btn.btn-default{
 	font-weight: 100;
 	font-size: 14px;	
+	float:right;
 }
 th.table_links{
 	font-weight: 100 !important;
+}
+.app-logo{
+	font-size: 42px;
+    display: inline-block;
+    font-weight: 400;
+    position: relative;
+    top: 12px;
+    line-height: .3;
+    color: black;
 }

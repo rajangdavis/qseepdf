@@ -22,6 +22,8 @@
         <li role="presentation pull-right">
           <a href="/" class="pointer">
             <img class="q-see-logo" src='//i.imgur.com/88IrbjF.png'>
+            <p class="lead app-logo">PDF</p>
+            <%=raw pdf_img %>
           </a>
         </li>
         <%= if current_user then link_to "Sign Out", logout_path(current_user),:class => "presentation pull-right", method: :delete end %>

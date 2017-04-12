@@ -1,6 +1,8 @@
-<div class="col-lg-5">
+<div class="panel-heading">
+	<h2 class="header">Recording Modes</h2>
+</div>
+<div class="panel-body">
 	<%= form_for @product_spec do |f| %>
-		<h2 class="">Recording Modes</h2>
 		<div class="form-group">
 			<%= f.label "Which of the following recording modes are supported by this product?" %>
 			<%= f.select(:recording_modes, @recording_modes,{},{ :multiple => true, :size => @recording_modes.size,:class =>"form-control"}) %>
@@ -11,6 +13,4 @@
 		</div>
 		<%= f.submit "Update Spec Sheet", :class => "btn btn-default" %>
 	<% end %>
-
-	
 </div>

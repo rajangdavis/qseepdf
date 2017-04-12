@@ -1,6 +1,8 @@
-<div class="col-lg-5">
+<div class="panel-heading">
+	<h2 class="header">More <%=@product_spec.product_type%> Info</h2>
+</div>		
+<div class="panel-body">
 	<%= form_for @product_spec do |f| %>
-		<h2 class="">More <%=@product_spec.product_type%> Info</h2>
 		<div class="form-group">
 			<%= f.label "What Video Compression is supported by this product?" %>
 			<%= f.select(:video_compression, @video_compression,{},{ :multiple => true, :size => @video_compression.size,:class =>"form-control"}) %>

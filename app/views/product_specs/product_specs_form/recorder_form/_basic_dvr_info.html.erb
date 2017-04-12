@@ -1,6 +1,8 @@
-<div class="col-lg-5">
+<div class="panel-heading">
+	<h2 class="header">Basic <%=@product_spec.product_type%> Info</h2>
+</div>
+<div class="panel-body">
 	<%= form_for @product_spec do |f| %>
-		<h2 class="">Basic <%=@product_spec.product_type%> Info</h2>
 		<div class="form-group">
 			Technology is: <span class=""><%=@product_spec.technology%></span>
 		</div>

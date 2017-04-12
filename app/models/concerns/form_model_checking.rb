@@ -5,7 +5,7 @@ module FormModelChecking
 		# Various checks when filling out the forms
 
 		def check_for_basic_info
-			check = !self.sku.nil? && !self.channels.nil? && !self.resolution.nil? && !self.display_resolution.nil? && !self.live_fps.nil? && !self.number_of_harddrives.nil? && !self.hdd_tb.nil? && !self.max_users.nil? && !self.os_compatibility.nil? && !self.product_compatibility.nil? && !self.monitor_connections.nil?
+			check = !self.sku.nil? && !self.channels.nil? && !self.resolution.empty? && !self.display_resolution.empty? && !self.live_fps.nil? && !self.number_of_harddrives.nil? && !self.hdd_tb.nil? && !self.max_users.nil? && !self.os_compatibility.nil? && !self.product_compatibility.nil?
 			conditional(check,true,false)
 		end
 
@@ -30,7 +30,7 @@ module FormModelChecking
 		end
 
 		def check_for_av_ports
-			check = !self.video_in.nil? && !self.alarm_in.nil? && !self.alarm_out.nil? && !self.audio_in.nil? && !self.audio_out.nil?
+			check = !self.video_in.nil? && !self.alarm_in.nil? && !self.alarm_out.nil? && !self.audio_in.nil? && !self.audio_out.nil? && !self.monitor_connections.nil?
 			conditional(check,true,false)
 		end
 
@@ -56,6 +56,11 @@ module FormModelChecking
 
 		def check_for_physical
 			check = !self.weight.nil? && !self.dimensions.nil? && !self.operating_temperature.nil?		
+			conditional(check,true,false)
+		end
+
+		def check_for_photos
+			check = !self.front_panel_file_name.nil? && !self.back_panel_file_name.nil?
 			conditional(check,true,false)
 		end
 

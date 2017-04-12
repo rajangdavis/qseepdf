@@ -1,32 +1,32 @@
-<h1 class="product_title <%= @product_spec.technology%>"><%= @product_spec.sku%></h1>
+<h1 class="product_title <%= @product_spec.technology%>"><%=raw link_to_edit({:ra => @rendered_as,:ps =>@product_spec, :t => "product_specs/product_specs_form/add_series_and_name",:v => @product_spec.sku})%></h1>
 <div class="main_table_div">
     <table id="main_table" class="main main_table">
         <tr>
-            <th>DVR Technology</th><td><%= @product_spec.technology%></td>
+            <th>DVR Technology</th><td><%=raw link_to_edit({:ra => @rendered_as,:ps =>@product_spec, :t => "product_specs/product_specs_form/recorder_form/basic_dvr_info",:v => @product_spec.technology})%></td>
         </tr>
         <tr>
-            <th>Channels</th><td><%= @product_spec.channels%></td>  
+            <th>Channels</th><td><%=raw link_to_edit({:ra => @rendered_as,:ps =>@product_spec, :t => "product_specs/product_specs_form/recorder_form/basic_dvr_info",:v => @product_spec.channels})%></td>  
         </tr>
         <tr>
-            <th>Recording Resolution</th><td><%= @product_spec.recording_resolutions%></td>
+            <th>Recording Resolution</th><td><%=raw link_to_edit({:ra => @rendered_as,:ps =>@product_spec, :t => "product_specs/product_specs_form/recorder_form/basic_dvr_info",:v => @product_spec.recording_resolutions})%></td>
         </tr>
         <tr>
-            <th>Live Viewing Resolution</th><td><%= @product_spec.live_viewing_resolutions%></td>
+            <th>Live Viewing Resolution</th><td><%=raw link_to_edit({:ra => @rendered_as,:ps =>@product_spec, :t => "product_specs/product_specs_form/recorder_form/basic_dvr_info",:v => @product_spec.live_viewing_resolutions})%></td>
         </tr>
         <tr>
-            <th>Live Display FPS</th><td><%= @product_spec.live_fps%></td>
+            <th>Live Display FPS</th><td><%=raw link_to_edit({:ra => @rendered_as,:ps =>@product_spec, :t => "product_specs/product_specs_form/recorder_form/basic_dvr_info",:v => @product_spec.live_fps})%></td>
         </tr>
         <tr>
-            <th>Hard Drive</th><td><%= @product_spec.hard_drive_support%></td>
+            <th>Hard Drive</th><td><%=raw link_to_edit({:ra => @rendered_as,:ps =>@product_spec, :t => "product_specs/product_specs_form/recorder_form/basic_dvr_info",:v => @product_spec.hard_drive_support})%></td>
         </tr>
         <tr>
-            <th>Remote Monitoring</th><td><%= @product_spec.remote_monitoring%></td>
+            <th>Remote Monitoring</th><td><%=raw link_to_edit({:ra => @rendered_as,:ps =>@product_spec, :t => "product_specs/product_specs_form/recorder_form/basic_dvr_info",:v => @product_spec.remote_monitoring})%></td>
         </tr>
         <tr>
-            <th>Compatibility</th><td><%= @product_spec.os_compatibility%></td>
+            <th>Compatibility</th><td><%=raw link_to_edit({:ra => @rendered_as,:ps =>@product_spec, :t => "product_specs/product_specs_form/recorder_form/basic_dvr_info",:v => @product_spec.os_compatibility})%></td>
         </tr>
         <tr>
-            <th>Connects With</th><td><%= @product_spec.product_compatibility%></td>
+            <th>Connects With</th><td><%=raw link_to_edit({:ra => @rendered_as,:ps =>@product_spec, :t => "product_specs/product_specs_form/recorder_form/basic_dvr_info",:v => @product_spec.connects_with})%></td>
         </tr>
     </table>
 </div>

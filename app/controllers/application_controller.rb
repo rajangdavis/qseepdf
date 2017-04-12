@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
 	# Prevent CSRF attacks by raising an exception.
 	# For APIs, you may want to use :null_session instead.
 	protect_from_forgery with: :exception
-	helper_method :pdf_icon, :current_user, :generate_checks_and_form_attrs, :white_list_attrs
+	helper_method :pdf_icon,:pdf_img, :current_user, :generate_checks_and_form_attrs, :white_list_attrs, :link_to_edit
 	require 'osc_ruby'
 
 	def rn_test_client
@@ -22,6 +22,10 @@ class ApplicationController < ActionController::Base
 	def pdf_icon
 		"<span><img class='pdf_icon' src='#{pdf_icon_source}'>Spec Sheet PDF</span>"
 	end
+
+    def pdf_img
+        "<img class='pdf_icon_small' src='#{pdf_icon_source}'/>"
+    end
 
 	def current_user
   		@current_user ||= User.where(id: session[:user_id]).first
@@ -72,6 +76,7 @@ class ApplicationController < ActionController::Base
         @check_for_ptz = @ps.check_for_ptz
         @check_for_power = @ps.check_for_power
         @check_for_physical = @ps.check_for_physical           
+        @check_for_photos = @ps.check_for_photos
 	end
 
 	def map_to_select(arr)
@@ -132,6 +137,24 @@ class ApplicationController < ActionController::Base
         end
 
         @ps_white_list.map{|ps|ps}
+    end
+
+    # specialized linking for the edit forms
+    def link_to_edit(args)
+        # checks the value of the 'rendered as'
+        ra = args[:ra]
+        # checks the value of the 'product_spec'
+        ps = args[:ps]
+        # checks the value of the 'template'
+        t = args[:t]
+        # checks the value of the HTML output
+        v = args[:v]
+
+        if ra == 'html'
+            "<a href='#{edit_product_spec_path(ps, :template =>t)}'>#{v}</a>"
+        else
+            v
+        end
     end
 
 end

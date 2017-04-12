@@ -1,11 +1,15 @@
+<div class="col-lg-3"></div>
 <div class="col-lg-6">
 	<div class="panel panel-default">
 		<%=
-			if @product_spec.product_type.match(/(DVR)|Recorder/)
+			if !@template.nil?
+				render :partial => @template
+			elsif @template.nil? && @product_spec.product_type.match(/(DVR)|Recorder/)
 				render :partial => "product_specs/product_specs_form/recorder_form"
-			elsif @ps.product_type.match(/(Camera)/)
+			elsif @template.nil? && @ps.product_type.match(/(Camera)/)
 				render :partial => "product_specs/product_specs_form/camera_form"
 			end
 		%>
 	</div>
 </div>
+<div class="col-lg-3"></div>

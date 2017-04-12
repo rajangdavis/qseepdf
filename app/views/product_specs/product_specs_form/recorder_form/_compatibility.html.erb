@@ -1,6 +1,8 @@
-<div class="col-lg-5">
+<div class="panel-heading">
+	<h2 class="header">Compatibility</h2>
+</div>
+<div class="panel-body">
 	<%= form_for @product_spec do |f| %>
-		<h2 class="">Compatibility</h2>
 		<div class="form-group">
 			<%= f.label "Which of the following remote monitoring softwares are supported by this product?" %>
 		    <%= f.select(:application_support, @supported_softwares,{},{ :multiple => true, :size => @supported_softwares.size,:class =>"form-control"}) %>

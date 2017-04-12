@@ -1,6 +1,8 @@
-<div class="col-lg-5">
+<div class="panel-heading">
+	<h2 class="header">Accessories</h2>
+</div>
+<div class="panel-body">
 	<%= form_for @product_spec do |f| %>
-		<h2 class="">Accessories</h2>
 		<div class="form-group">
 			<%= f.label :remote_control, 'How can this product be controlled?' %>
 			<%= f.select(:remote_control, @remote_control,{},{ :multiple => true, :size => @remote_control.size,:class =>"form-control"}) %>

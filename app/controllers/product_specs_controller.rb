@@ -1,5 +1,5 @@
 class ProductSpecsController < ApplicationController
-    before_action :set_product_spec, only: [:show, :edit, :update]
+    before_action :set_product_spec, only: [:show, :edit, :update,:edit_specific]
     
     def new
         @product_spec = ProductSpec.new
@@ -37,12 +37,12 @@ class ProductSpecsController < ApplicationController
     end
 
     def edit
-        if @product_spec.product_series.nil?
+        @template = params[:template] 
+        if @product_spec.product_series.nil? || @template == "product_specs/product_specs_form/add_series_and_name"
             @rn_product_series = OSCRuby::ServiceProduct.where(rn_test_client,"parent.lookupName = '#{@product_spec.product_type}'").map{|sp| sp.name}
         end
 
         generate_checks_and_form_attrs(@product_spec)
-        
     end
 
     def update

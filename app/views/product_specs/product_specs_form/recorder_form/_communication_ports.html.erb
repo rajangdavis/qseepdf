@@ -1,6 +1,8 @@
-<div class="col-lg-5">
+<div class="panel-heading">
+	<h2 class="header">Communication Ports</h2>
+</div>
+<div class="panel-body">
 	<%= form_for @product_spec do |f| %>
-		<h2 class="">Communication Ports</h2>
 		<div class="form-group">
 			<%= f.label :network_ports, 'What are the Mbps capabilities of the RJ45 adapter?' %>
 			<%= f.select(:network_ports, @network_ports,{},{ :multiple => true, :size => @network_ports.size,:class =>"form-control"}) %>
