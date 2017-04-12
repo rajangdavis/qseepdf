@@ -1,7 +1,9 @@
 <br>
 <table class="main smaller">
   <tr class="first">
-    <th colspan="2" class="special_header grey_scale">PTZ</th>
+    <th colspan="2" class="special_header grey_scale">
+      <%=raw link_to_edit({:ra => @rendered_as,:ps =>@product_spec, :t => "product_specs/product_specs_form/camera_form/ptz",:v => "PTZ"})%>
+    </th>
   </tr>
   <tr>
     <th>Horizontal Rotation</th><td><%= @product_spec.horizontal_rotation%></td>

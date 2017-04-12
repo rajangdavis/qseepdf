@@ -116,6 +116,10 @@ module FormModelChecking
 			conditional(check,true,false)
 		end
 
+		def check_for_photos
+			check = !self.camera_image_file_name.nil?
+			conditional(check,true,false)
+		end
 
 	end
 	

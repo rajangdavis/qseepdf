@@ -1,7 +1,9 @@
 <br>
 <table class="main smaller">
   <tr class="first">
-    <th colspan="2" class="special_header <%= @product_spec.technology%>">Additional Image Features</th>
+    <th colspan="2" class="special_header <%= @product_spec.technology%>">
+      <%=raw link_to_edit({:ra => @rendered_as,:ps =>@product_spec, :t => "product_specs/product_specs_form/camera_form/additional_image_features",:v => "Additional Image Features"})%>
+    </th>
   </tr>
   <tr>
     <th>Auto Iris</th><td><%= @product_spec.auto_iris %></td>

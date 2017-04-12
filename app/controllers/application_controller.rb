@@ -61,6 +61,7 @@ class ApplicationController < ActionController::Base
         @check_for_audio = @ps.check_for_audio
         @check_for_connectivity = @ps.check_for_connectivity
         @check_for_power = @ps.check_for_power
+        @check_for_photos = @ps.check_for_photos
     end
 
 	def recorder_checks(product_spec)

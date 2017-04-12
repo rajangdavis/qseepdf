@@ -1,38 +1,38 @@
-<h1 class="product_title <%= @product_spec.technology%>"><%= @product_spec.sku%></h1>
+<h1 class="product_title <%= @product_spec.technology%>"><%=raw link_to_edit({:ra => @rendered_as,:ps =>@product_spec, :t => "product_specs/product_specs_form/add_series_and_name",:v => @product_spec.sku})%></h1>
 <div class="main_table_div">
     <table id="main_table" class="main main_table">
         <tr>
-            <th>Camera Type</th><td><%= @product_spec.camera_type%></td>
+            <th>Camera Type</th><td><%=raw link_to_edit({:ra => @rendered_as,:ps =>@product_spec, :t => "product_specs/product_specs_form/camera_form/basic_camera_info",:v => @product_spec.camera_type})%></td>
         </tr>
         <tr>
-            <th>Camera Technology</th><td><%= @product_spec.technology%></td>
+            <th>Camera Technology</th><td><%=raw link_to_edit({:ra => @rendered_as,:ps =>@product_spec, :t => "product_specs/product_specs_form/camera_form/basic_camera_info",:v => @product_spec.technology})%></td>
         </tr>
         <tr>
-            <th>Image Sensor Size</th><td><%= @product_spec.image_sensor_size%></td>
+            <th>Image Sensor Size</th><td><%=raw link_to_edit({:ra => @rendered_as,:ps =>@product_spec, :t => "product_specs/product_specs_form/camera_form/basic_camera_info",:v => @product_spec.image_sensor_size})%></td>
         </tr>
         <tr>
-            <th>Image Sensor Type</th><td><%= @product_spec.sensor_type%></td>
+            <th>Image Sensor Type</th><td><%=raw link_to_edit({:ra => @rendered_as,:ps =>@product_spec, :t => "product_specs/product_specs_form/camera_form/basic_camera_info",:v => @product_spec.sensor_type})%></td>
         </tr>
         <tr>
-            <th>Image Resolution</th><td><%= @product_spec.image_resolution%></td>
+            <th>Image Resolution</th><td><%=raw link_to_edit({:ra => @rendered_as,:ps =>@product_spec, :t => "product_specs/product_specs_form/camera_form/basic_camera_info",:v => @product_spec.image_resolution})%></td>
         </tr>
         <tr>
-            <th>Megapixels (digital)</th><td><%= @product_spec.technology%></td>
+            <th>Megapixels (digital)</th><td><%=raw link_to_edit({:ra => @rendered_as,:ps =>@product_spec, :t => "product_specs/product_specs_form/camera_form/basic_camera_info",:v => @product_spec.technology})%></td>
         </tr>
         <tr>
-            <th>Effective Pixels</th><td><%= @product_spec.effective_pixels%></td>
+            <th>Effective Pixels</th><td><%=raw link_to_edit({:ra => @rendered_as,:ps =>@product_spec, :t => "product_specs/product_specs_form/camera_form/basic_camera_info",:v => @product_spec.effective_pixels})%></td>
         </tr>
         <tr>
-            <th>Lens Size</th><td><%= @product_spec.lens_size%></td>
+            <th>Lens Size</th><td><%=raw link_to_edit({:ra => @rendered_as,:ps =>@product_spec, :t => "product_specs/product_specs_form/camera_form/basic_camera_info",:v => @product_spec.lens_size})%></td>
         </tr>
         <tr>
-            <th>Angle of View</th><td><%= @product_spec.angle_of_view%></td>
+            <th>Angle of View</th><td><%=raw link_to_edit({:ra => @rendered_as,:ps =>@product_spec, :t => "product_specs/product_specs_form/camera_form/basic_camera_info",:v => @product_spec.angle_of_view})%></td>
         </tr>
         <tr>
-            <th>IR Cut Filter</th><td><%= @product_spec.ir_cut_filter%></td>
+            <th>IR Cut Filter</th><td><%=raw link_to_edit({:ra => @rendered_as,:ps =>@product_spec, :t => "product_specs/product_specs_form/camera_form/basic_camera_info",:v => @product_spec.ir_cut_filter})%></td>
         </tr>
     </table>
 </div>
 <div class="main_table_div camera">
-    <%= image_tag @product_spec.camera_image.url %>
+    <%=raw link_to_edit({:ra => @rendered_as,:ps =>@product_spec, :t => "product_specs/product_specs_form/camera_form/photos",:v => (image_tag @product_spec.camera_image.url)})%>
 </div>

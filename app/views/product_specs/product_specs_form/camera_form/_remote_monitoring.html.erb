@@ -1,6 +1,8 @@
-<div class="col-lg-5">
+<div class="panel-heading">
+	<h2 class="header">Remote Monitoring</h2>
+</div>
+<div class="panel-body">
 	<%= form_for @product_spec do |f| %>
-		<h2 class="">Remote Monitoring</h2>
 		<div class="form-group">
 			<%= f.label "Can this product be used by itself (is it standalone)?" %>
 		    <%= f.text_field(:use_as_standalone) %>

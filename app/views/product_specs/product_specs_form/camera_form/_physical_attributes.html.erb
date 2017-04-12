@@ -1,6 +1,8 @@
-<div class="col-lg-5">
+<div class="panel-heading">
+	<h2 class="header">Physical Attributes</h2>
+</div>
+<div class="panel-body">
 	<%= form_for @product_spec do |f| %>
-		<h2 class="">Physical Attributes</h2>
 		<div class="form-group">
 			<%= f.label "Is this product weather proof" %>
 		    <%= f.select :weather_proof, @yes_or_no,:class =>"form-control"%>

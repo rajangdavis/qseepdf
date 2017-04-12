@@ -1,8 +1,10 @@
-<div class="col-lg-5">
+<div class="panel-heading">
+	<h2 class="header">Night Vision</h2>
+</div>
+<div class="panel-body">
 	<%= form_for @product_spec do |f| %>
-		<h2 class="">Night Vision</h2>
 		<div class="form-group">
-			<%= f.label "What is the number of IR LED's supported by this product?" %>
+			<%= f.label :ir_leds, "What is the number of IR LED's supported by this product?" %>
 			<br>
 		    <%= f.number_field(:ir_leds, min: 1) %>
 		</div>

@@ -1,7 +1,9 @@
 <br>
 <table class="main smaller">
   <tr class="first">
-    <th colspan="2" class="special_header grey_scale">Power</th>
+    <th colspan="2" class="special_header grey_scale">
+    	<%=raw link_to_edit({:ra => @rendered_as,:ps =>@product_spec, :t => "product_specs/product_specs_form/camera_form/power",:v => "Power"})%>
+	</th>
   </tr>
   <tr>
     <th>Power Supply</th><td><%= @product_spec.power_supply%></td>

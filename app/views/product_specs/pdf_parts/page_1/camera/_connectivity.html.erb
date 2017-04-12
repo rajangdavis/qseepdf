@@ -1,7 +1,9 @@
 <br>
 <table class="main smaller">
   <tr class="first">
-    <th colspan="2" class="special_header grey_scale">Connectivity</th>
+    <th colspan="2" class="special_header grey_scale">
+      <%=raw link_to_edit({:ra => @rendered_as,:ps =>@product_spec, :t => "product_specs/product_specs_form/camera_form/connectivity",:v => "Connectivity"})%>
+    </th>
   </tr>
   <tr>
     <th>Connector Types</th><td><%=@product_spec.connectors_or_cables_mapped %></td>

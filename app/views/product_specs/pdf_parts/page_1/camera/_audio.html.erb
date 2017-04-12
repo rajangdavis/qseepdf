@@ -1,7 +1,9 @@
 <br>
 <table class="main smaller">
   <tr class="first">
-    <th colspan="2" class="special_header grey_scale">Audio</th>
+    <th colspan="2" class="special_header grey_scale">
+    	<%=raw link_to_edit({:ra => @rendered_as,:ps =>@product_spec, :t => "product_specs/product_specs_form/camera_form/audio",:v => "Audio"})%>
+    </th>
   </tr>
   <tr>
     <th>Audio Range</th><td><%= @product_spec.audio_range%></td>

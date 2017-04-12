@@ -1,6 +1,8 @@
-<div class="col-lg-5">
+<div class="panel-heading">
+	<h2 class="header">Power Supply</h2>
+</div>
+<div class="panel-body">
 	<%= form_for @product_spec do |f| %>
-		<h2 class="">Power Supply</h2>
 		<div class="form-group">
 			<%= f.label "What type of power supply is used by this product?" %>
 		    <%= f.text_field :power_supply,:class => "form-control"%>
