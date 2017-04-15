@@ -19,7 +19,7 @@
 			<h2 class="header">Duplicate a Product Spec</h2>
 		</div>
 
-		<%= form_tag("/duplicate", method: "post") do %>
+		<%= form_tag("#{request.base_url}/duplicate", method: "post") do %>
 			<div class="form-group panel-body">
 				<table class="table">
 					<caption>Which spec sheet would you like to duplicate?</caption>
@@ -72,7 +72,7 @@
 		<div class="panel-heading">
 			<h2 class="header">Create a Product in RightNow</h2>
 		</div>
-		<%= form_tag("/create_in_rn", method: "post") do %>
+		<%= form_tag("#{request.base_url}/create_in_rn", method: "post") do %>
 			<div class="form-group panel-body">
 				<table class="table">
 					<caption>What type of device do you need to create in RightNow?</caption>

@@ -34,6 +34,7 @@ class ProductSpecsController < ApplicationController
 
     def duplicate       
         @sku = params[:sku]
+        @ptc = params[:product_to_copy]
 
         @product_to_copy = ProductSpec.where('sku = ?',@ptc)
 

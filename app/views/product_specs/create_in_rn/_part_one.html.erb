@@ -4,7 +4,7 @@
 		<div class="panel-heading">
 			<h2 class="header">Create a Product in RightNow</h2>
 		</div>
-		<%= form_tag("/create_in_rn", method: "post", :multipart => true) do %>
+		<%= form_tag("#{request.base_url}/create_in_rn", method: "post", :multipart => true) do %>
 			<div class="form-group panel-body">			    
 			    <div class="form-group">
 			    	<table class="table">
