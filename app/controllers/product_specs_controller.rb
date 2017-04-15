@@ -1,13 +1,38 @@
 class ProductSpecsController < ApplicationController
     before_action :set_product_spec, only: [:show, :edit, :update]
+    before_action :check_for_user, only: [:edit, :index, :create_in_rn, :upload_pic_to_s3]
     
     def new
         @product_spec = ProductSpec.new
         create
     end
 
-    def duplicate
-        @ptc = params[:product_to_copy]
+    def create_in_rn
+        @pt_exists = params[:product_type].nil?
+        @rn_sku_exists = params[:rn_sku].nil?
+        @product_picture_exists = params[:upload].nil?
+
+        if @pt_exists == false
+            @pt = params[:product_type]
+            @rn_product_series = OSCRuby::ServiceProduct.where(rn_test_client,"parent.lookupName = '#{@pt}'").map{|sp| sp.name}
+            @rn_new_product = {}
+        end
+
+        if @rn_sku_exists == false
+            @rn_sku = params[:rn_sku]
+            @rn_prod_parent = params[:product_series]
+            @response = create_rn_product(@rn_sku,@rn_prod_parent)
+        end
+
+        if @product_picture_exists == false
+            file_name = "#{@rn_sku}.jpg"
+            file_to_upload = File.read(params[:upload][:file].tempfile)
+            upload_pic_to_s3(file_to_upload,file_name)
+        end
+    end
+
+
+    def duplicate       
         @sku = params[:sku]
 
         @product_to_copy = ProductSpec.where('sku = ?',@ptc)
@@ -76,6 +101,7 @@ class ProductSpecsController < ApplicationController
     private
 
     def set_product_spec
+        check_for_user
         @product_spec = ProductSpec.find(params[:id])       
         if !@product_spec.product_type.nil? and @product_spec.product_type.match(/(Recorder|DVR)/)
             @product_spec = RecorderSpec.find(params[:id])
@@ -83,6 +109,32 @@ class ProductSpecsController < ApplicationController
             @product_spec = CameraSpec.find(params[:id])
         end
         @product_spec
+    end
+
+    def create_rn_product(product_sku,parent_product)
+        new_product = OSCRuby::ServiceProduct.new
+        new_product.names[0] = {'labelText' => product_sku, 'language' => {'id' => 1}}
+        new_product.names[1] = {'labelText' => product_sku, 'language' => {'id' => 11}}
+        new_product.parent = {'lookupName' => parent_product}
+        new_product.displayOrder = 1
+        new_product.adminVisibleInterfaces[0] = {'id' => 1}
+        new_product.endUserVisibleInterfaces[0] = {'id' => 1}
+        new_product.create(rn_client)
+        new_product
+    end
+
+    def upload_pic_to_s3(file,file_name)
+        s3 = AWS::S3.new
+        qsee_bucket = s3.buckets[ENV['QSee_Bucket']]
+        new_object = qsee_bucket.objects["content/support/prodImage/#{file_name}"]
+        new_object.write(file)
+        new_object.acl = :public_read
+    end
+
+    def check_for_user
+        if !current_user
+            redirect_to root_path
+        end
     end
 
     def product_spec_params

@@ -37,7 +37,7 @@
 		<% end %>
 	</div>
 </div>
-<div class="col-lg-8">
+<div class="col-lg-4">
 	<div class="panel panel-default">
 		<div class="panel-heading">
 			<h2 class="header">Product Specs</h2>
@@ -65,5 +65,22 @@
 				</tbody> 
 			</table>
 		</div>
+	</div>
+</div>
+<div class="col-lg-4">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h2 class="header">Create a Product in RightNow</h2>
+		</div>
+		<%= form_tag("/create_in_rn", method: "post") do %>
+			<div class="form-group panel-body">
+				<table class="table">
+					<caption>What type of device do you need to create in RightNow?</caption>
+				</table>
+			    <%= select_tag :product_type, options_for_select(@rn_product_types),{:class => "form-control"}%>
+			    <br>
+				<%= submit_tag "Create Product", :class => "btn btn-default small" %>
+		    </div>
+		<% end %>
 	</div>
 </div>

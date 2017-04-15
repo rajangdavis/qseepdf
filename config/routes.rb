@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy', as: :logout
 
   post '/duplicate' => 'product_specs#duplicate'
+  post '/create_in_rn' => 'product_specs#create_in_rn'
 
   resources :product_specs, except: :destroy
 
