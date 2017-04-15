@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
 	end
 
 	def pdf_icon
-		"<span><img class='pdf_icon' src='#{pdf_icon_source}'>Spec Sheet PDF</span>"
+		"<span><img class='pdf_icon' src='#{pdf_icon_source}'>PDF</span>"
 	end
 
     def pdf_img
