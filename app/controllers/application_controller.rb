@@ -2,19 +2,8 @@ class ApplicationController < ActionController::Base
 	# Prevent CSRF attacks by raising an exception.
 	# For APIs, you may want to use :null_session instead.
 	protect_from_forgery with: :exception
-	helper_method :pdf_icon,:pdf_img, :current_user, :generate_checks_and_form_attrs, :white_list_attrs, :link_to_edit, :rn_production_client
+	helper_method :pdf_icon,:pdf_img, :current_user, :generate_checks_and_form_attrs, :white_list_attrs, :link_to_edit, 
 	require 'osc_ruby'
-    require 'aws-sdk'
-
-    def rn_production_client
-
-        rn_client = OSCRuby::Client.new do |config|
-            config.username = ENV['OSC_ADMIN']
-            config.password = ENV['OSC_PASSWORD']
-            config.interface = ENV['OSC_PRODUCTION_SITE']
-        end
-
-    end
 
 	def rn_test_client
 

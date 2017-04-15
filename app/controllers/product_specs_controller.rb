@@ -113,6 +113,13 @@ class ProductSpecsController < ApplicationController
     end
 
     def create_rn_product(product_sku,parent_product)
+        
+        rn_production_client = OSCRuby::Client.new do |config|
+            config.username = ENV['OSC_ADMIN']
+            config.password = ENV['OSC_PASSWORD']
+            config.interface = ENV['OSC_PRODUCTION_SITE']
+        end
+
         new_product = OSCRuby::ServiceProduct.new
         new_product.names[0] = {'labelText' => product_sku, 'language' => {'id' => 1}}
         new_product.names[1] = {'labelText' => product_sku, 'language' => {'id' => 11}}
