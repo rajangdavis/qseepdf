@@ -119,7 +119,7 @@ class ProductSpecsController < ApplicationController
         new_product.displayOrder = 1
         new_product.adminVisibleInterfaces[0] = {'id' => 1}
         new_product.endUserVisibleInterfaces[0] = {'id' => 1}
-        new_product.create(rn_client)
+        new_product.create(rn_production_client)
         new_product
     end
 
