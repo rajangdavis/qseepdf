@@ -120,6 +120,8 @@ class ProductSpecsController < ApplicationController
             config.interface = ENV['OSC_PRODUCTION_SITE']
         end
 
+        puts rn_production_client.inspect
+
         new_product = OSCRuby::ServiceProduct.new
         new_product.names[0] = {'labelText' => product_sku, 'language' => {'id' => 1}}
         new_product.names[1] = {'labelText' => product_sku, 'language' => {'id' => 11}}
