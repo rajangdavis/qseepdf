@@ -4,6 +4,8 @@
         <meta charset='utf-8' />
         <% if @rendered_as == 'pdf' %>
             <%= wicked_pdf_stylesheet_link_tag "pdf"%>
+        <% else %>
+            <%= stylesheet_link_tag 'html', media: 'all', 'data-turbolinks-track' => true%>
         <% end %>
         <%= stylesheet_link_tag "//fonts.googleapis.com/css?family=Roboto:900,400,700,300,500|Roboto+Condensed:400,300,700" %>
     </head>
