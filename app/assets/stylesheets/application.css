@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  *= require pdf
+ *= require html
  */
 body{
 	font-family: 'Roboto', sans-serif;
