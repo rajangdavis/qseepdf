@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   post '/duplicate' => 'product_specs#duplicate'
   post '/create_in_rn' => 'product_specs#create_in_rn'
+  post '/upload_product_picture' => 'product_specs#upload_product_picture'
 
   resources :product_specs, except: :destroy
 

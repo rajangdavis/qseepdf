@@ -22,13 +22,19 @@ class ProductSpecsController < ApplicationController
             @rn_sku = params[:rn_sku]
             @rn_prod_parent = params[:product_series]
             @response = create_rn_product(@rn_sku,@rn_prod_parent)
+            if @product_picture_exists == false
+                file_name = "#{@rn_sku}.jpg"
+                file_to_upload = File.read(params[:upload][:file].tempfile)
+                upload_pic_to_s3(file_to_upload,file_name)
+            end
         end
+    end
 
-        if @product_picture_exists == false
-            file_name = "#{@rn_sku}.jpg"
-            file_to_upload = File.read(params[:upload][:file].tempfile)
-            upload_pic_to_s3(file_to_upload,file_name)
-        end
+    def upload_product_picture
+        @rn_sku = params[:rn_sku]
+        file_name = "#{@rn_sku}.jpg"
+        file_to_upload = File.read(params[:upload][:file].tempfile)
+        upload_pic_to_s3(file_to_upload,file_name)
     end
 
 
