@@ -1,3 +1,6 @@
+<% if @rendered_as == 'pdf' %>
+    <%= wicked_pdf_stylesheet_link_tag "pdf"%>
+<% end %>
 <div class="product_spec_footer">
   <a class="footer_link" href="https://www.q-see.com">www.q-see.com</a>
   <span class="footer_info">DIGITAL PERIPHERAL SOLUTIONS, INC.  |  8015 E. CRYSTAL DR., ANAHEIM, CA 92807 USA</span>
