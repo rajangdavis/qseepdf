@@ -1,0 +1,566 @@
+body{
+	font-family: "Roboto"
+}
+
+body.pdf_view{
+	margin:0 15%;
+	margin-bottom:100px;
+}
+
+
+.product_spec_header img{
+	width: 70%;
+}
+
+.product_title{
+	font-size: 50px;
+	font-weight: bolder;
+	margin:1% 0;
+	clear:both;
+}
+
+h2.product_title{
+	font-size: 35px;
+}
+.main_table_div{
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+.main_table_div:first-of-type{
+	width:40%;
+}
+.main_table_div:last-of-type{
+	width:50%;
+	float:right;
+}
+/*.main_table_div.camera img{
+	margin-top: -50px;
+}*/
+.dvr_info img{
+	display: block;
+	margin: 0 auto;
+	max-width:100%;
+	vertical-align: middle;
+}
+
+.SDI{
+	color: #f27037;
+}
+
+.IP{
+	color: #00A0DF;	
+}
+
+.BNC{
+	color: #00ad42;
+}
+
+.WI-FI{
+	color: #ffc826;
+}
+
+table{
+	color:#666666;
+}
+
+
+table.main:not(.left_side){
+	width: 100%;
+}
+
+#main_table{
+	width:400px;
+}
+
+.container {
+	width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.left_side{
+	/*display: inline-table;*/
+	float:left;
+	width:57%;
+}
+
+.right_side{
+	position: relative;
+	left:0;
+	float:right;
+	margin-left: 10px;
+	width: 41%;
+	display: inline-table;
+}
+
+table.nested{	
+	display: inline;
+	/*width: 50%;*/
+}
+
+table.nested.second{	
+	float:right;
+}
+
+table.nested.second:not(.pdf_view){	
+	margin-top: -72px;
+}
+
+table.main th:not(.special_header),table.main td,table.nested th:not(.special_header),table.nested td{
+	font-size: 13px;
+    padding-top: 5px;
+    vertical-align: top;
+    line-height: 26px;
+    padding-left: 10px;
+    font-weight: lighter;
+    font-family: 'Roboto Condensed';
+}
+
+table:not(#main_table) tr th:not(.special_header),table:not(#main_table) tr td{
+	font-size:13px;
+	font-family: 'Roboto Condensed';
+}
+
+table.main.smaller,table.nested{
+	border-collapse: collapse;
+}
+
+table.main.smaller tr:not(.first),table.nested tr:not(.first){
+	border-bottom: .5px solid lightgrey;
+	padding: 5px;
+}
+
+table.main.smaller td,table.main.smaller th,table.nested td,table.nested th{
+	font-size:10px;
+	font-weight: lighter;
+}
+
+table.main.smaller th, table.nested th{
+	padding-left: 15px;
+}
+
+table.main tr th.special_header{
+	color:white;
+	text-transform: uppercase;
+	font-size:16px;
+	font-family: 'Roboto';
+	font-weight: bold;
+	padding: 7px;
+}
+
+table:not(.main-table) tr th.smaller{
+	width:40%;
+}
+
+table:not(.main-table) tr th,table:not(.main-table) tr td{
+	height:15px;
+	/*padding:10px;*/
+}
+
+th.special_header.SDI{
+	background-color: #f27037;
+}
+th.special_header.IP{
+	background-color: #00A0DF;	
+}
+th.special_header.BNC{
+	background-color: #00ad42;
+}
+th.special_header.WI-FI{
+	background-color: #ffc826;
+}
+th.special_header.ANALOG{
+	background-color: black;
+}
+th.special_header.grey_scale{
+	background-color: rgb(188, 189, 192);	
+	color:#666666 !important;
+}
+
+.main tr th{
+	text-align: left;
+	white-space: nowrap;
+}
+
+#main_table tr td{
+	display: block;
+    white-space: normal;
+    /*word-break: break-word;*/
+}
+
+div.pagebreak{
+	page-break-after: always;
+}
+
+
+/*  Footer CSS  */
+
+div.product_spec_footer{
+	-webkit-box-shadow: 0px 0px 13px 1px rgba(102,102,102,1);
+	-moz-box-shadow: 0px 0px 13px 1px rgba(102,102,102,1);
+	box-shadow: 0px 0px 13px 1px rgba(102,102,102,1);
+}
+
+div.product_spec_footer a.footer_link{
+	color:#ffc826;
+	text-decoration: none;
+	font-weight: bolder;
+	font-size: 14px;
+	float:left;
+	padding: 15px;
+}
+div.product_spec_footer span.footer_info{
+	color: #666666;
+	font-weight: lighter;
+	font-size: 16px;
+	float:right;
+	padding: 19px;
+}
+
+img.back_panel{
+	display: inline-block;
+	width: 100%;
+}
+a.template-link{
+	color:#ffc826 !important;
+	text-decoration: none;
+}
+
+.special_header.grey_scale a.template-link, .special_header.WI-FI a.template-link{
+	color:black !important;
+	text-decoration: none;
+}
+
+a.template-link:hover{
+	text-decoration: underline;	
+	cursor: pointer;
+}
+body{
+	font-family: "Roboto"
+}
+
+body.pdf_view{
+	margin:0 22%;
+}
+
+.pdf_content{
+	height:230vh;
+}
+
+.product_spec_header img{
+	width: 70%;
+}
+
+.product_title{
+	font-size: 50px;
+	font-weight: bolder;
+	margin:1% 0;
+	clear:both;
+}
+
+h2.product_title{
+	font-size: 35px;
+}
+.main_table_div{
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+.main_table_div:first-of-type{
+	width:40%;
+}
+.main_table_div:last-of-type{
+	width:50%;
+	float:right;
+}
+.main_table_div.camera img{
+	margin-top: -50px;
+}
+.dvr_info img{
+	display: block;
+	margin: 0 auto;
+	max-width:100%;
+	vertical-align: middle;
+}
+
+.SDI{
+	color: #f27037;
+}
+
+.IP{
+	color: #00A0DF;	
+}
+
+.BNC{
+	color: #00ad42;
+}
+
+.WI-FI{
+	color: #ffc826;
+}
+
+table{
+	color:#666666;
+}
+
+
+table.main:not(.left_side){
+	width: 100%;
+}
+
+#main_table{
+	width:400px;
+}
+
+.container {
+	width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.left_side{
+	/*display: inline-table;*/
+	float:left;
+	width:57%;
+}
+
+.right_side{
+	position: relative;
+	left:0;
+	float:right;
+	margin-left: 10px;
+	width: 41%;
+	display: inline-table;
+}
+
+table.nested{	
+	display: inline;
+	/*width: 50%;*/
+}
+
+table.nested.second{	
+	float:right;
+}
+
+table.nested.second:not(.pdf_view){	
+	margin-top: -72px;
+}
+
+table.main th:not(.special_header),table.main td,table.nested th:not(.special_header),table.nested td{
+	font-size:11px;
+	padding-top: 2px;
+	vertical-align: top;
+	/*line-height: 11px;*/
+}
+
+table:not(#main_table) tr th:not(.special_header),table:not(#main_table) tr td{
+	font-size:10px;
+	font-family: 'Roboto Condensed';
+}
+
+table.main.smaller,table.nested{
+	border-collapse: collapse;
+}
+
+table.main.smaller tr:not(.first),table.nested tr:not(.first){
+	border-bottom: .5px solid lightgrey;
+	padding: 5px;
+}
+
+table.main.smaller td,table.main.smaller th,table.nested td,table.nested th{
+	font-size:10px;
+	font-weight: lighter;
+}
+
+table.main.smaller th, table.nested th{
+	padding-left: 15px;
+}
+
+table.main tr th.special_header{
+	color:white;
+	text-transform: uppercase;
+	font-size:14px;
+	font-family: 'Roboto';
+	font-weight: bold;
+	padding: 7px;
+}
+
+table:not(.main-table) tr th.smaller{
+	width:40%;
+}
+
+table:not(.main-table) tr th,table:not(.main-table) tr td{
+	height:15px;
+	/*padding:10px;*/
+}
+
+th.special_header.SDI{
+	background-color: #f27037;
+}
+th.special_header.IP{
+	background-color: #00A0DF;	
+}
+th.special_header.BNC{
+	background-color: #00ad42;
+}
+th.special_header.WI-FI{
+	background-color: #ffc826;
+}
+th.special_header.ANALOG{
+	background-color: black;
+}
+th.special_header.grey_scale{
+	background-color: rgb(188, 189, 192);	
+	color:#666666 !important;
+}
+
+.main tr th{
+	text-align: left;
+	white-space: nowrap;
+}
+
+#main_table tr td{
+	display: block;
+    white-space: normal;
+    word-break: break-word;
+}
+
+div.pagebreak{
+	page-break-after: always;
+}
+
+
+/*  Footer CSS  */
+
+div.product_spec_footer{
+	-webkit-box-shadow: 0px 0px 13px 1px rgba(102,102,102,1);
+	-moz-box-shadow: 0px 0px 13px 1px rgba(102,102,102,1);
+	box-shadow: 0px 0px 13px 1px rgba(102,102,102,1);
+}
+
+div.product_spec_footer a.footer_link{
+	color:#ffc826;
+	text-decoration: none;
+	font-weight: bolder;
+	font-size: 14px;
+	float:left;
+	padding: 15px;
+}
+div.product_spec_footer span.footer_info{
+	color: #666666;
+	font-weight: lighter;
+	font-size: 10px;
+	float:right;
+	padding: 19px;
+}
+
+img.back_panel{
+	display: inline-block;
+	width: 100%;
+}
+.special_header:not(.grey_scale):not(.WI-FI) a.template-link{
+	color:#ffc826 !important;
+	text-decoration: none;
+}
+
+.special_header.grey_scale a.template-link, .special_header.WI-FI a.template-link{
+	color:black !important;
+	text-decoration: none;
+}
+
+a.template-link:hover{
+	text-decoration: underline;	
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+
+
+ */
+
+body{
+	font-family: 'Roboto', sans-serif;
+	background: white;
+	font-weight: 100;
+	font-size: 14px;
+}
+.q-see-logo{
+	width:22%;
+}
+a.pointer:hover,a.pointer:focus{
+	text-decoration: none;
+	cursor: pointer;
+	background-color: transparent !important;
+}
+label{
+	font-weight: 100;	
+}
+.container.main{
+	margin-top: 75px;
+}
+.navbar.navbar-default.navbar-fixed-top{
+	background: #fec10d;
+	padding: 0 17px;
+}
+.pdf_icon{
+	width: 10%
+}
+.pdf_icon_small{
+	width: 6%
+}
+.login-btn{
+	border: none;
+	margin: 0;
+	background: #eee;
+}
+.presentation.pull-right{
+	margin-top: 15px;
+	font-weight: 200;
+}
+h3.upcase-title{
+	display: inline-block;
+    text-transform: uppercase;
+    margin: 0;
+    position: relative;
+    top: 4px;
+}
+h2.header,.sign-out{
+	text-transform: uppercase;
+    font-family: 'Roboto Condensed';
+    font-weight: 400;
+    font-size: 16px;
+    margin: 0;
+    letter-spacing: 1px;
+}
+h2.header{
+    text-align: center;
+}
+.btn.btn-default{
+	font-weight: 100;
+	font-size: 14px;	
+	float:right;
+}
+th.table_links{
+	font-weight: 100 !important;
+}
+.app-logo{
+	font-size: 42px;
+    display: inline-block;
+    font-weight: 400;
+    position: relative;
+    top: 12px;
+    line-height: .3;
+    color: black;
+}
