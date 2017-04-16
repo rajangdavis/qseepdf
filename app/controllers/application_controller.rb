@@ -153,7 +153,7 @@ class ApplicationController < ActionController::Base
         v = args[:v]
 
         if ra == 'html'
-            "<a href='#{edit_product_spec_path(ps, :template =>t)}'>#{v}</a>"
+            "<a class='template-link' href='#{edit_product_spec_path(ps, :template =>t)}'>#{v}</a>"
         else
             v
         end

@@ -2,11 +2,13 @@
 <html>
     <head>
         <meta charset='utf-8' />
-        <%= wicked_pdf_stylesheet_link_tag "pdf"%>
+        <% if @rendered_as == 'pdf' %>
+            <%= wicked_pdf_stylesheet_link_tag "pdf"%>
+        <% end %>
         <%= stylesheet_link_tag "//fonts.googleapis.com/css?family=Roboto:900,400,700,300,500|Roboto+Condensed:400,300,700" %>
     </head>
     <!-- This pdf_view function is the products_specs_helper -->
-    <body class="<%=pdf_view%>" data-no-turbolink="true">
+    <body class="<%=pdf_view%>" data-no-turbolink="true" >
         <div class="pdf_content">
             <% if @rendered_as=="html" %>
                 <br><br>

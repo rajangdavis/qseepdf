@@ -1,7 +1,7 @@
 <div class="dvr_info">
     <%= render "product_specs/pdf_parts/page_1/camera/pdf_main_table_portion.html.erb"%>
 </div>
-<br>
+<%= if @rendered_as == 'pdf'  then raw '<br>' end%>
 <div class="left_side">
 	<%= render "product_specs/pdf_parts/page_1/camera/night_vision.html.erb"%>
 	<%= render "product_specs/pdf_parts/page_1/camera/additional_image_features.html.erb"%>

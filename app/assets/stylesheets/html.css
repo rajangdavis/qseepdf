@@ -3,12 +3,10 @@ body{
 }
 
 body.pdf_view{
-	margin:0 22%;
+	margin:0 15%;
+	margin-bottom:75%;
 }
 
-.pdf_content{
-	height:230vh;
-}
 
 .product_spec_header img{
 	width: 70%;
@@ -36,9 +34,9 @@ h2.product_title{
 	width:50%;
 	float:right;
 }
-.main_table_div.camera img{
+/*.main_table_div.camera img{
 	margin-top: -50px;
-}
+}*/
 .dvr_info img{
 	display: block;
 	margin: 0 auto;
@@ -110,14 +108,17 @@ table.nested.second:not(.pdf_view){
 }
 
 table.main th:not(.special_header),table.main td,table.nested th:not(.special_header),table.nested td{
-	font-size:11px;
-	padding-top: 2px;
-	vertical-align: top;
-	/*line-height: 11px;*/
+	font-size: 13px;
+    padding-top: 5px;
+    vertical-align: top;
+    line-height: 26px;
+    padding-left: 10px;
+    font-weight: lighter;
+    font-family: 'Roboto Condensed';
 }
 
 table:not(#main_table) tr th:not(.special_header),table:not(#main_table) tr td{
-	font-size:10px;
+	font-size:13px;
 	font-family: 'Roboto Condensed';
 }
 
@@ -142,7 +143,7 @@ table.main.smaller th, table.nested th{
 table.main tr th.special_header{
 	color:white;
 	text-transform: uppercase;
-	font-size:14px;
+	font-size:16px;
 	font-family: 'Roboto';
 	font-weight: bold;
 	padding: 7px;
@@ -212,7 +213,7 @@ div.product_spec_footer a.footer_link{
 div.product_spec_footer span.footer_info{
 	color: #666666;
 	font-weight: lighter;
-	font-size: 10px;
+	font-size: 16px;
 	float:right;
 	padding: 19px;
 }
@@ -221,7 +222,7 @@ img.back_panel{
 	display: inline-block;
 	width: 100%;
 }
-.special_header:not(.grey_scale):not(.WI-FI) a.template-link{
+a.template-link{
 	color:#ffc826 !important;
 	text-decoration: none;
 }
@@ -233,4 +234,5 @@ img.back_panel{
 
 a.template-link:hover{
 	text-decoration: underline;	
+	cursor: pointer;
 }
