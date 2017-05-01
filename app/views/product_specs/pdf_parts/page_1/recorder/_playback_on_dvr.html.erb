@@ -3,7 +3,7 @@
   <tbody>
     <tr class="first">
       <strong><th colspan="3" class="special_header <%= @product_spec.technology%>">
-        <%=raw link_to_edit({:ra => @rendered_as,:ps =>@product_spec, :t => "product_specs/product_specs_form/recorder_form/basic_dvr_info",:v => "Playback on DVR"})%>
+        <%=raw link_to_edit({:ra => @rendered_as,:ps =>@product_spec, :t => "product_specs/product_specs_form/recorder_form/basic_dvr_info",:v => @v})%>
         </th></strong>
     </tr>
     <% @product_spec.display_resolution.each_with_index do |r,i|%>

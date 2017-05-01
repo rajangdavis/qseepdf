@@ -63,6 +63,11 @@ class ProductSpecsController < ApplicationController
     end
 
     def show
+        if !@product_spec.technology.nil? && @product_spec.technology == "IP HD"
+            @v = "Playback on NVR"
+        else
+            @v = "Playback on DVR"
+        end
         respond_to do |format|
             format.pdf do
                 @rendered_as = "pdf"
