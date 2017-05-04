@@ -8,7 +8,7 @@
     <td>
       <table class="nested">
         <% @product_spec.resolution.each_with_index do |r,i|%>
-          <% if i <= 3 %>
+          <% if i <= 3 && r!="" %>
             <tr>
               <th><%= "#{r} Resolution"%></th><td>4000 x 4000 pixels</td>
             </tr>      
@@ -17,7 +17,7 @@
       </table>
       <table class="nested second <%=pdf_view%>">
         <% @product_spec.resolution.each_with_index do |r,i|%>
-          <% if i > 3 %>
+          <% if i > 3 && r!=""  %>
             <tr>
               <th><%= "#{r} Resolution"%></th><td>2000 x 2000 pixels</td>
             </tr>      

@@ -103,7 +103,7 @@ class ApplicationController < ActionController::Base
         @connectors_or_cables = map_to_select(["HDMI Cable"])
         @mounting_hardware = map_to_select(["Screws","Screws for Hard Drive"])
         @other_accessories = map_to_select(["Quick Start Guide"])
-        @ptz_protocols = map_to_select(["COC","Null ","Pelco P","Pelco D","Lilin","Minking","Neon","Star","VIDO","DSCP","VISCA","Samsung","RM110","HY"])
+        @ptz_protocols = map_to_select(["COC","Null ","Pelco P","Pelco D","Lilin","Minking","Neon","Star","VIDO","DSCP","VISCA","Samsung","RM110","HY","Provided from camera"])
     end
 
     def camera_form_attrs

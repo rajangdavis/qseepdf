@@ -7,14 +7,14 @@
         </th></strong>
     </tr>
     <% @product_spec.display_resolution.each_with_index do |r,i|%>
-      <% if i == 0 %>
+      <% if i == 0 && r!=""%>
         <tr>
           <th>Playback Speed</th><td><%=r%> at 30 FPS per Channel</td><th>240 FPS Total</th>
         </tr>      
       <% end %>
     <% end %>
     <% @product_spec.display_resolution.each_with_index do |r,i|%>
-      <% if i > 0 %>
+      <% if i > 0 && r!=""%>
         <tr>
           <th></th><td><%=r%> at 30 FPS per Channel</td><th>240 FPS Total</th>
         </tr>      
