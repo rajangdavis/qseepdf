@@ -38,7 +38,7 @@ class ProductSpecsController < ApplicationController
     end
 
 
-    def duplicate       
+    def duplicate
         @sku = params[:sku]
         @ptc = params[:product_to_copy]
 
@@ -48,10 +48,10 @@ class ProductSpecsController < ApplicationController
 
         @copied_prod.sku = @sku
 
-        if @copied_prod.save
+        if !@sku.blank? && @copied_prod.save
             redirect_to product_spec_path(@copied_prod)
         else
-            @error = @copied_prod
+            @error = "Either the save didn't work or there was no sku provided; please try again."
         end
     end
 
